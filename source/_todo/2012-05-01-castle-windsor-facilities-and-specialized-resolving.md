@@ -1,0 +1,129 @@
+---
+layout: post
+title: 'Castle Windsor: Facilities and specialized resolving'
+date: 2012-05-01 21:29
+comments: true
+sharing: true
+footer: true
+categories:
+- inversion of control
+- castle windsor
+published: true
+---
+In my previous [post]({{ root_url }}/blog//2012/04/22/castle-windsor-how-to-register-components), I showed you how to register and resolve the most basic components. 
+
+- But how can we resolve Func or Lazy ?
+- What's up with facilities ? What are they and how to use them. 
+
+I will briefly touch one of many facilities available for Castle Windsor: TypedFactoryFacility.
+
+{% include _toc.html %}
+
+## Array[T] - IEnumerable<T> - IList<T> - ICollection<T>
+What if one of your components depend on an array or a IEnumerable<T>. Consider following scenario:
+
+{% highlight csharp %}
+public class TaskExecutorWithArray
+{
+	private readonly ITask[] tasks;
+	public TaskExecutorWithArray(ITask[] tasks)
+	{
+		this.tasks = tasks;
+	}
+}
+{% endhighlight %}
+
+In Castle Windsor you need to **opt-in** for this behavior before registering components, so the container knows you want this behavior.
+
+{% highlight csharp %}
+// Initialize the container
+var container = new WindsorContainer();
+// Important opt-in for this behavior before registering components !
+container.Kernel.Resolver.AddSubResolver(
+                                new CollectionResolver(container.Kernel, true));
+// Register components
+container.Register(Component.For<ITask>().ImplementedBy<FirstTask>());
+container.Register(Component.For<ITask>().ImplementedBy<SecondTask>());
+container.Register(Component.For<TaskExecutorWithArray>());
+// Resolve our array
+TaskExecutorWithArray executor= container.Resolve<TaskExecutorWithArray>();
+{% endhighlight %}
+
+This will work if your TaskExecutor is depending on an IEnumerable, ICollection, IList or an array of ITask. The second constructor parameter of CollectionResolver determines if Windsor allows **empty collections**, so if the value is true it will not throw an exception if you have no components registered.
+
+> You need to **opt-in before registering any components** otherwise it will not work!
+
+### CollectionResolverFacility
+As this does not exist out of the box and it is so important to opt-in before registering any components, let's create our first facility. A facility is more or less an extension of Castle.Windsor.
+
+{% highlight csharp %}
+using Castle.Core.Configuration;
+using Castle.MicroKernel;
+using Castle.MicroKernel.Resolvers.SpecializedResolvers;
+namespace Windsor.Tests.Facilities
+{
+   public class CollectionResolverFacility : IFacility
+   {
+      public void Init(IKernel kernel, IConfiguration facilityConfig)
+      {
+         kernel.Resolver.AddSubResolver(new CollectionResolver(kernel, true));
+      }
+      public void Terminate() {}
+   }
+}
+{% endhighlight %}
+
+Now next time you need to have collection dependencies you will just need to add the facility to Windsor like this:
+
+{% highlight csharp %}
+// Initialize the container
+var container = new WindsorContainer();
+// Add the facility to the container before adding any component registrations !
+container.AddFacility<CollectionResolverFacility>();
+{% endhighlight %}
+
+## Func<T>
+What if you needed to resolve a Func ? You could just do this, albeit a little bit cumbersome:
+
+{% highlight csharp %}
+// Initialize the container
+var container = new WindsorContainer();
+// Register your component
+container.Register(Component.For<ITask>().ImplementedBy<FirstTask>());
+// Now register your delegate as a factory
+container.Register(Component.For<Func<ITask>>()
+                            .UsingFactoryMethod(
+                                  kernel => new Func<ITask>(kernel.Resolve<ITask>)));
+// Now you can resolve your func
+Func<ITask> taskFunc = container.Resolve<Func<ITask>>();
+{% endhighlight %}
+
+What if you wanted this behavior out of the box without registering every delegate by hand: use the power of **TypedFactoryFacility**:
+
+{% highlight csharp %}
+// Initialize the container
+var container = new WindsorContainer();
+// Add the facility
+container.AddFacility<TypedFactoryFacility>();
+// Register your component(s)
+container.Register(Component.For<ITask>().ImplementedBy<FirstTask>());
+// Now you can resolve a func for every component you registered !
+Func<ITask> taskFunc = container.Resolve<Func<ITask>>();
+{% endhighlight %}
+
+## Lazy<T>
+Last but not least how to use Lazy<T>, a recent addition to Castle Windsor (as of version 3)
+
+{% highlight csharp %}
+// Initialize the container
+var container = new WindsorContainer();
+// Opt-in for this behavior
+container.Register(Component.For<ILazyComponentLoader>()
+                            .ImplementedBy<LazyOfTComponentLoader>());
+// Register your component
+container.Register(Component.For<ITask>().ImplementedBy<FirstTask>());
+// Now resolve your Lazy<ITask>
+Lazy<ITask> lazyTask = container.Resolve<Lazy<ITask>>();
+{% endhighlight %}
+
+Next time i will try to elaborate on the trough power of the TypedFactoryFacility, i hope you are liking the series so far.  Remember your feedback is important!
