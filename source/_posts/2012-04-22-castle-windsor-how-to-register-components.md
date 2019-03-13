@@ -1,48 +1,48 @@
 ---
 layout: post
-title: 'Castle Windsor: How to register components'
+title: "Castle Windsor: How to register components"
 date: 2012-04-22 21:28
 comments: true
 sharing: true
 footer: true
 categories:
-- inversion of control
-- castle windsor
+  - inversion of control
+  - castle windsor
 published: true
 ---
+
 You can register your components in the following ways:
 
-{% include _toc.html %}
-
-- Registering components one-by-one (<a href="http://docs.castleproject.org/Windsor.Registering-components-one-by-one.ashx" target="_blank">Read More</a>)
-- Registering components by conventions (<a href="http://docs.castleproject.org/Windsor.Registering-components-by-conventions.ashx" target="_blank">Read more</a>)
-- Registering components using Xml configuration, which can be combined with the code options (<a href="http://docs.castleproject.org/Windsor.XML-Registration-Reference.ashx" target="_blank">Read more</a>)
+- [Registering components one-by-one](https://github.com/castleproject/Windsor/blob/master/docs/registering-components-one-by-one.md)
+- [Registering components by conventions](https://github.com/castleproject/Windsor/blob/master/docs/registering-components-by-conventions.md)
+- [Registering components using Xml configuration, which can be combined with the code options](https://github.com/castleproject/Windsor/blob/master/docs/xml-registration-reference.md)
 
 ## Registering components one-by-one
 
-{% highlight csharp %}
+```csharp
 // Initialize the container
 var container = new WindsorContainer();
 // Register your component with the desired lifestyle
 container.Register(Component.For<IComponent>()
                        .ImplementedBy<Component>()
                        .LifestylePerThread());
-{% endhighlight %}
+```
 
 ### What about open generic types?
 
-{% highlight csharp %}
+```csharp
 // Initialize the container
 var container = new WindsorContainer();
 // Register your component for instance with the default lifestyle = Singleton
 container.Register(Component.For(typeof (IRepository<>)
                        .ImplementedBy(typeof (Repository<>));
-{% endhighlight %}
+```
 
 ### How to replace an allready registered component?
+
 In Windsor you can simple register it again, the last registered component will be the one used
 
-{% highlight csharp %}
+```csharp
 // Initialize the container
 var container = new WindsorContainer();
 // Register your component for instance with a lifestyle
@@ -53,23 +53,24 @@ container.Register(Component.For(typeof (IRepository<>)
 container.Register(Component.For<IRepository<Customer>>()
                        .ImplementedBy<CustomerRepository>()
                        .LifestylePerWebRequest());
-{% endhighlight %}
+```
 
 ### How to make one class resolvable by two interface but have them share the same instance?
 
-{% highlight csharp %}
+```csharp
 // Initialize the container
 var container = new WindsorContainer();
 // Register your component
 container.Register(Component.For<IRepository<Customer>, ICustomerRepository>()
                        .ImplementedBy<CustomerRepository>()
                        .LifestylePerWebRequest());
-{% endhighlight %}
+```
 
 ### How can i use the decorator pattern?
+
 First let's create a logging decorator
 
-{% highlight csharp %}
+```csharp
 public class LoggingCustomerRepository : IRepository<Customer>
 {
    public ILogger Logger { get; set; };
@@ -88,11 +89,11 @@ public class LoggingCustomerRepository : IRepository<Customer>
       Repository.Add(instance);
    }
 }
-{% endhighlight %}
+```
 
 With Castle Windsor the order of the registrations enables this behavior, so the first implementation will be injected into the decorator.
 
-{% highlight csharp %}
+```csharp
 // Initialize the container
 var container = new WindsorContainer();
 // Register the default implementation
@@ -103,12 +104,13 @@ container.Register(Component.For<IRepository<Customer>()
 container.Register(Component.For<IRepository<Customer>()
                        .ImplementedBy<LoggingCustomerRepository>()
                        .LifestylePerWebRequest());
-{% endhighlight %}
+```
 
 ## Registering components by conventions
+
 To do exactly the same but with conventions syntax
 
-{% highlight csharp %}
+```csharp
 // Initialize the container
 var container = new WindsorContainer();
 // Register all non abstract class inheriting from IRepository with all interfaces
@@ -116,14 +118,15 @@ var container = new WindsorContainer();
 container.Register(Classes.FromThisAssembly()
                        .BasedOn(typeof(IRepository<>))
                        .WithServiceAllInterfaces());
-{% endhighlight %}
+```
 
 **WithServiceAllInterfaces**: Means windsor will register the component bound to all it's interfaces, so if for instance your CustomerRepository implements IRepository<Customer> but also ICustomerRepository, when you resolve an instance, it will be shared across both contracts for the specified lifetime ( transient means no sharing )
 
 ## Using installers
+
 Installers provide you a way to group related registrations into one class, to create an installer simply create a class and implement IWindsorInstaller, like this:
 
-{% highlight csharp %}
+```csharp
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
@@ -139,13 +142,13 @@ namespace Windsor.Tests.Generics
       }
    }
 }
-{% endhighlight %}
+```
 
 To use this installer simple install it on your container instance
 
-{% highlight csharp %}
+```csharp
 // Initialize the container
 var container = new WindsorContainer();
 // Install the installer(s)
 container.Install(new RepositoryInstaller());
-{% endhighlight %}
+```
