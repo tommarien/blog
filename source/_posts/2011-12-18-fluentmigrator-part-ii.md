@@ -12,7 +12,7 @@ categories:
 published: true
 ---
 
-As a result of [my previous post]({{ root_url }}/blog/2011/12/09/fluentmigrator-database-migrations-done-right) of FluentMigrator, i thought publishing a follow-up article would be a great idea.  Meanwhile I joined the team of FluentMigrator as a contributor.   I would like to continue on the previous post and show some more common scenario's.
+As a result of [my previous post](/blog/2011/12/09/fluentmigrator-database-migrations-done-right) of FluentMigrator, i thought publishing a follow-up article would be a great idea.  Meanwhile I joined the team of FluentMigrator as a contributor.   I would like to continue on the previous post and show some more common scenario's.
 
 ## The start
 
