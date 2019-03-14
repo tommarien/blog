@@ -6,10 +6,11 @@ comments: true
 sharing: true
 footer: true
 categories:
-- opinion
-- agile
+  - opinion
+  - agile
 published: true
 ---
+
 According to the thesaurus, agile or agility, is a term to describe ease of movement. It can consist out of speed, flexibility or quick thinking.
 
 When we use the term Agile in software development, we think of all the buzzwords surrounding it: Scrum, closure, startup, iteration, standup, retrospective ...
