@@ -2,13 +2,12 @@
 layout: post
 title: "Deadlock heaven: Serializable IsolationLevel"
 date: 2012-01-30 14:25
-comments: true
-sharing: true
-footer: true
+
 categories:
-  - database
-  - sql server
-published: true
+  - Performance
+tags:
+  - Database
+  - SqlServer
 ---
 
 I recently got the opportunity to investigate deadlocks, that occurred on a production environment. I always volunteer when deadlocks are involved. Just because you get a chance to learn a lot about locking and how it works on SqlServer. Most of the time, deadlocks can be solved by adding an index. But not this time, this time i discovered something bigger. The client was using WCF as a service tier. By default using transactions on a wcf service or with the use of a TransactionScope your transaction isolationlevel becomes **Serializable** by default.

@@ -2,12 +2,12 @@
 layout: post
 title: DateTime.Now, the test-driven paradox
 date: 2011-11-05 22:56
-comments: true
-sharing: true
-footer: true
 categories:
-  - test driven design
-published: true
+  - Test Driven Design
+tags:
+  - Mock
+  - Clock
+  - Time
 ---
 
 Although i know already a lot has been written about this dilemma, i never saw a good and descriptive enough solution to this problem. Let's first start by situating the problem with a simple code example.
@@ -15,12 +15,12 @@ Although i know already a lot has been written about this dilemma, i never saw a
 ```csharp
 public class Order
 {
-   public Order()
-   {
-      CreatedDate = DateTime.Now;
-   }
+  public Order()
+  {
+    CreatedDate = DateTime.Now;
+  }
 
-   public DateTime CreatedDate { get; private set; }
+  public DateTime CreatedDate { get; private set; }
 }
 ```
 
@@ -35,15 +35,15 @@ Creating an interface (for instance ISystemClock) with off course the implementa
 ```csharp
 public interface ISystemClock
 {
-   DateTime Now();
+  DateTime Now();
 }
 
 public class RealSystemClock : ISystemClock
 {
-   public DateTime Now()
-   {
-      return DateTime.Now;
-   }
+  public DateTime Now()
+  {
+    return DateTime.Now;
+  }
 }
 ```
 
@@ -52,11 +52,12 @@ Although it allows the dependency to be  mocked in unit tests, it would make th
 ```csharp
 public class Order
 {
-   public Order(ISystemClock clock)
-   {
-      CreatedDate = clock.Now();
-   }
-   public DateTime CreatedDate { get; private set; }
+  public Order(ISystemClock clock)
+  {
+    CreatedDate = clock.Now();
+  }
+
+  public DateTime CreatedDate { get; private set; }
 }
 ```
 
@@ -67,17 +68,17 @@ Wrap the _ISystemClock_ into a static class which allows changing the implementa
 ```csharp
 public static class SystemClock
 {
-   private static ISystemClock Clock = new RealSystemClock();
+  private static ISystemClock Clock = new RealSystemClock();
 
-   public static DateTime Now
-   {
-      get { return Clock.Now(); }
-   }
+  public static DateTime Now
+  {
+    get { return Clock.Now(); }
+  }
 
-   public static void Set(ISystemClock clock)
-   {
-      Clock = clock;
-   }
+  public static void Set(ISystemClock clock)
+  {
+    Clock = clock;
+  }
 }
 ```
 
@@ -86,7 +87,7 @@ Which would result in the following, much nicer _Order_ constructor:
 ```csharp
 public Order()
 {
-   CreatedDate = SystemClock.Now;
+  CreatedDate = SystemClock.Now;
 }
 ```
 
@@ -103,7 +104,7 @@ Expose **DateTime.Now** as an instance of  a function, that can be replaced in 
 ```csharp
 public static class SystemTime
 {
-   public static Func<DateTime> Now = () => DateTime.Now;
+  public static Func<DateTime> Now = () => DateTime.Now;
 }
 ```
 
@@ -116,18 +117,18 @@ Let's alter Ayende's solution and tackle the first problem: Thread Safety
 ```csharp
 public static class SystemClock
 {
-   [ThreadStatic]
-   private static Func provider;
+  [ThreadStatic]
+  private static Func provider;
 
-   private static Func<DateTime> Provider
-   {
-      get { return provider ?? (provider = () => DateTime.Now); }
-   }
+  private static Func<DateTime> Provider
+  {
+    get { return provider ?? (provider = () => DateTime.Now); }
+  }
 
-   public static DateTime Now()
-   {
-      return Provider();
-   }
+  public static DateTime Now()
+  {
+    return Provider();
+  }
 }
 ```
 
@@ -136,45 +137,45 @@ Ok, this seems to solve the problem, but it removed the ability to mock our **Da
 ```csharp
 public static class SystemClock
 {
-   [ThreadStatic]
-   private static Func provider;
+  [ThreadStatic]
+  private static Func provider;
 
-   private static Func<DateTime> Provider
-   {
-      get { return provider ?? (provider = () => DateTime.Now); }
-   }
+  private static Func<DateTime> Provider
+  {
+    get { return provider ?? (provider = () => DateTime.Now); }
+  }
 
-   public static DateTime Now()
-   {
-      return Provider();
-   }
+  public static DateTime Now()
+  {
+    return Provider();
+  }
 
-   public static IDisposable Frozen(DateTime pointInTime)
-   {
-      var value = Provider;
-      var undo = new DisposableAction(() => provider = value);
-      provider = () => pointInTime;
-      return undo;
-   }
+  public static IDisposable Frozen(DateTime pointInTime)
+  {
+    var value = Provider;
+    var undo = new DisposableAction(() => provider = value);
+    provider = () => pointInTime;
+    return undo;
+  }
 }
 
 public class DisposableAction : IDisposable
 {
-   private readonly Action action;
-   private bool isDisposed;
+  private readonly Action action;
+  private bool isDisposed;
 
-   public DisposableAction(Action action)
-   {
-      if (action == null) throw new ArgumentNullException("action");
-      this.action = action;
-   }
+  public DisposableAction(Action action)
+  {
+    if (action == null) throw new ArgumentNullException("action");
+    this.action = action;
+  }
 
-   public void Dispose()
-   {
-      if (isDisposed) return;
-      action();
-      isDisposed = true;
-   }
+  public void Dispose()
+  {
+    if (isDisposed) return;
+    action();
+    isDisposed = true;
+  }
 }
 ```
 
@@ -184,11 +185,11 @@ As the _SystemClock_.**Frozen** method returns a IDisposable, it would auto-clea
 [Test]
 public void Should_set_the_createddate_to_systemclock_now()
 {
-   using (SystemClock.Frozen(new DateTime(2001, 1, 1)))
-   {
-      var order = new Order();
-      Assert.AreEqual(SystemClock.Now(), order.CreatedDate);
-   }
+  using (SystemClock.Frozen(new DateTime(2001, 1, 1)))
+  {
+    var order = new Order();
+    Assert.AreEqual(SystemClock.Now(), order.CreatedDate);
+  }
 }
 ```
 

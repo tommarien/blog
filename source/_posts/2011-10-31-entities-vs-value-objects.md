@@ -2,14 +2,10 @@
 layout: post
 title: Entities vs Value objects
 date: 2011-10-31 20:39
-comments: true
-sharing: true
-footer: true
 categories:
-  - architecture
-  - domain driven design
-  - object oriented
-published: true
+  - Architecture
+  - Domain Driven Design
+  - Object Oriented
 ---
 
 I know this is a very popular topic in "Domain Driven Design" fora's, but still most of the definitions still remain vague. As these are the two corner stones of a domain model, i thought they deserved some attention.
@@ -23,12 +19,12 @@ I'll try to make this one a little more clear by giving an example:
 ```csharp
 public class Person
 {
-   public Person(int id)
-   {
-   }
+  public Person(int id)
+  {
+  }
 
-   public int Id { get; set; }
-   public string Name { get; set; }
+  public int Id { get; set; }
+  public string Name { get; set; }
 }
 ```
 
@@ -56,8 +52,8 @@ Model your entities accordingly, overriding equals and gethashcode to take the i
 ```csharp
 public class FullName
 {
-   public string Firstname { get; private set; };
-   public string Lastname { get; private set; };
+  public string Firstname { get; private set; };
+  public string Lastname { get; private set; };
 }
 ```
 

@@ -2,14 +2,10 @@
 layout: post
 title: Take control of your configuration
 date: 2012-04-12 15:13
-comments: true
-sharing: true
-footer: true
 categories:
-  - architecture
-  - test driven development
-  - configuration
-published: true
+  - C#
+  - Test Driven Development
+  - Configuration
 ---
 
 Using configuration values can sometimes be hard to get a SUT thoroughly tested. Especially when you have behavior tied to those configuration values.
@@ -19,23 +15,24 @@ Consider this simple scenario where we have a component that will throw errors d
 ```csharp
 public class SomeComponent
 {
-   public void AMethod()
-   {
-      try
-      {
-         // Some magical moment
-      }
-      catch (Exception e)
-      {
-         bool throwErrors = true;
-         bool parsed;
+  public void AMethod()
+  {
+    try
+    {
+      // Some magical moment
+    }
+    catch (Exception e)
+    {
+      bool throwErrors = true;
+      bool parsed;
 
-         if (bool.TryParse(ConfigurationManager.AppSettings["ThrowErrors"], out parsed)) throwErrors = parsed;
+      if (bool.TryParse(ConfigurationManager.AppSettings["ThrowErrors"], out parsed)) throwErrors = parsed;
 
-         logger.Error(e);
+      logger.Error(e);
 
-         if (throwErrors) throw;
-      }
+      if (throwErrors) throw;
+    }
+  }
 }
 ```
 
@@ -49,12 +46,12 @@ What if we could solve this nasty static dependency to ConfigurationManager. Let
 using System.Collections.Specialized;
 namespace Redux.Configuration
 {
-   public abstract class ConfigurationManagerBase
-   {
-      public abstract NameValueCollection AppSettings { get; }
-      public abstract string ConnectionString(string name);
-      public abstract T GetSection<T>(string sectionName) where T : class;
-   }
+  public abstract class ConfigurationManagerBase
+  {
+    public abstract NameValueCollection AppSettings { get; }
+    public abstract string ConnectionString(string name);
+    public abstract T GetSection<T>(string sectionName) where T : class;
+  }
 }
 ```
 
@@ -65,25 +62,25 @@ using System.Collections.Specialized;
 using System.Configuration;
 namespace Redux.Configuration
 {
-   public class ConfigurationManagerAdapter : ConfigurationManagerBase
-   {
-      public override NameValueCollection AppSettings
-      {
-         get { return ConfigurationManager.AppSettings; }
-      }
+  public class ConfigurationManagerAdapter : ConfigurationManagerBase
+  {
+    public override NameValueCollection AppSettings
+    {
+      get { return ConfigurationManager.AppSettings; }
+    }
 
-      public override string ConnectionString(string name)
-      {
-         var connectionString = ConfigurationManager.ConnectionStrings[name];
-         return connectionString != null ? connectionString.ConnectionString : null;
-      }
+    public override string ConnectionString(string name)
+    {
+      var connectionString = ConfigurationManager.ConnectionStrings[name];
+      return connectionString != null ? connectionString.ConnectionString : null;
+    }
 
-      public override T GetSection<T>(string sectionName)
-      {
-         var section = ConfigurationManager.GetSection(sectionName);
-         return section as T;
-      }
-   }
+    public override T GetSection<T>(string sectionName)
+    {
+      var section = ConfigurationManager.GetSection(sectionName);
+      return section as T;
+    }
+  }
 }
 ```
 
@@ -94,14 +91,14 @@ Let's add a string extension to take all that parsing stuff out of the real meth
 ```csharp
 namespace Redux.Extensions
 {
-   public static class StringExtensions
-   {
-      public static bool TryParseAsBoolean(this string value, bool defaultValue = false)
-      {
-         bool parsed;
-         return bool.TryParse(value, out parsed) ? parsed : defaultValue;
-      }
-   }
+  public static class StringExtensions
+  {
+    public static bool TryParseAsBoolean(this string value, bool defaultValue = false)
+    {
+      bool parsed;
+      return bool.TryParse(value, out parsed) ? parsed : defaultValue;
+    }
+  }
 }
 ```
 
@@ -111,15 +108,15 @@ And finally create a type-safe appsettings class with a dependency to our abstra
 using Redux.Extensions;
 namespace Redux.Configuration
 {
-   public class AppSettings
-   {
-      public AppSettings(ConfigurationManagerBase configurationManager)
-      {
-         ThrowErrors = configurationManager.AppSettings["ThrowErrors"].TryParseAsBoolean(true);
-      }
-
-      public virtual bool ThrowErrors { get; private set; }
+  public class AppSettings
+  {
+    public AppSettings(ConfigurationManagerBase configurationManager)
+    {
+      ThrowErrors = configurationManager.AppSettings["ThrowErrors"].TryParseAsBoolean(true);
     }
+
+    public virtual bool ThrowErrors { get; private set; }
+  }
 }
 ```
 
@@ -130,28 +127,28 @@ using System;
 using Redux.Configuration;
 namespace Redux
 {
-   public class SomeComponent
-   {
-      private readonly AppSettings appSettings;
+  public class SomeComponent
+  {
+    private readonly AppSettings appSettings;
 
-      public SomeComponent(AppSettings appSettings)
-      {
-         this.appSettings = appSettings;
-      }
+    public SomeComponent(AppSettings appSettings)
+    {
+      this.appSettings = appSettings;
+    }
 
-      public void AMethod()
+    public void AMethod()
+    {
+      try
       {
-         try
-         {
-            // Some magical moment
-         }
-         catch (Exception e)
-         {
-            Logger.Error(e);
-            if (appSettings.ThrowErrors) throw;
-         }
+        // Some magical moment
       }
-   }
+      catch (Exception e)
+      {
+        Logger.Error(e);
+        if (appSettings.ThrowErrors) throw;
+      }
+    }
+  }
 }
 ```
 

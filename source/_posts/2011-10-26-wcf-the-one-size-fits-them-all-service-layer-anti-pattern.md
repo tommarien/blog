@@ -3,12 +3,9 @@ layout: post
 title: Wcf, the one size fits them all Service Layer anti-pattern
 date: 2011-10-26 08:30
 categories:
-  - architecture
-  - opinion
-  - wcf
-comments: true
-sharing: true
-footer: true
+  - Architecture
+  - Opinion
+  - WCF
 ---
 
 When you talk with fellow developers and you mention **Service Layer** people automatically hear **WCF Services**. Did i miss a book or some guidance document from Microsoft, stating that WCF stands for service layer?
@@ -57,12 +54,12 @@ Please consider following scenario and hopefully you will rethink your answer:
 [DataContract]
 public class Product
 {
-   public Product()
-   {
-   }
+  public Product()
+  {
+  }
 
-   [DataMember]
-   public double Prise { get; set; }
+  [DataMember]
+  public double Prise { get; set; }
 }
 ```
 
@@ -72,14 +69,14 @@ Which off course is nicely used in following WCF Service:
 [ServiceContract]
 public interface IProductService
 {
-   [OperationContract]
-   Product GetProductById(int id);
+  [OperationContract]
+  Product GetProductById(int id);
 }
 ```
 
 Conversation:
 
-_Armand (Architect):_ John, Lisa has made a screw up in code, you need to rename the property Prise to Price in our product model.  
-_John ( Senior Developer):_ Can't do Armand!  
-_Armand (Architect):_ Why not, John?  
+_Armand (Architect):_ John, Lisa has made a screw up in code, you need to rename the property Prise to Price in our product model.
+_John ( Senior Developer):_ Can't do Armand!
+_Armand (Architect):_ Why not, John?
 _John (Senior Developer) :_ [Hesitates] Well ... erm ... because we have to call all of our customers and tell them we have a breaking API change.

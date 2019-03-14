@@ -2,14 +2,12 @@
 layout: post
 title: FluentMigrator, database migrations done right
 date: 2011-12-09 19:53
-comments: true
-sharing: true
-footer: true
 categories:
-  - continuous integration
-  - fluentmigrator
-  - database
-published: true
+  - Continuous Integration
+  - FluentMigrator
+tags:
+  - Database
+  - Migrations
 ---
 
 People that know me in real life, know I can be a real stickler when it comes to continuous integration and TDD.  I like my code to be continuously integrated. And i am not only talking about unit-tests, that mock out your database, in my oppinion this is the lie part of your code.  No you shouldn't be testing your orm, but writing logic around assumptions (namely your queries and database operations) is only covering a part of your code.  How would you be certain that you have an unique index in place for instance ?
@@ -51,25 +49,25 @@ using FluentMigrator;
 [Migration(201112091827)]
 public class M0001_Add_Person : Migration
 {
-   public const string SchemaName = "Personalia";
-   public const string TableName = "Person";
+  public const string SchemaName = "Personalia";
+  public const string TableName = "Person";
 
-   public override void Up()
-   {
-      Create.Schema(SchemaName);
-      Create.Table(TableName).InSchema(SchemaName)
-         .WithColumn("Id").AsInt64().Identity().PrimaryKey()
-         .WithColumn("Firstname").AsAnsiString(40).Nullable()
-         .WithColumn("Lastname").AsAnsiString(60).Nullable()
-         .WithColumn("Email").AsAnsiString(128).NotNullable();
+  public override void Up()
+  {
+    Create.Schema(SchemaName);
+    Create.Table(TableName).InSchema(SchemaName)
+        .WithColumn("Id").AsInt64().Identity().PrimaryKey()
+        .WithColumn("Firstname").AsAnsiString(40).Nullable()
+        .WithColumn("Lastname").AsAnsiString(60).Nullable()
+        .WithColumn("Email").AsAnsiString(128).NotNullable();
 
-      Create.Index().OnTable(TableName).InSchema(SchemaName).OnColumn("Email").Unique();
-   }
-   public override void Down()
-   {
-      Delete.Table(TableName).InSchema(SchemaName);
-      Delete.Schema(SchemaName);
-   }
+    Create.Index().OnTable(TableName).InSchema(SchemaName).OnColumn("Email").Unique();
+  }
+  public override void Down()
+  {
+    Delete.Table(TableName).InSchema(SchemaName);
+    Delete.Schema(SchemaName);
+  }
 }
 ```
 
