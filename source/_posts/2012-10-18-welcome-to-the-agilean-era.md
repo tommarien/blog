@@ -2,13 +2,9 @@
 layout: post
 title: Welcome to the Agilean Era
 date: 2012-10-18 22:34
-comments: true
-sharing: true
-footer: true
 categories:
-  - opinion
-  - agile
-published: true
+  - Opinion
+  - Agile
 ---
 
 ## The illusion

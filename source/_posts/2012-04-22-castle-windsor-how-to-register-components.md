@@ -2,13 +2,9 @@
 layout: post
 title: "Castle Windsor: How to register components"
 date: 2012-04-22 21:28
-comments: true
-sharing: true
-footer: true
 categories:
-  - inversion of control
-  - castle windsor
-published: true
+  - Inversion Of Control
+  - Castle Windsor
 ---
 
 You can register your components in the following ways:
@@ -73,21 +69,24 @@ First let's create a logging decorator
 ```csharp
 public class LoggingCustomerRepository : IRepository<Customer>
 {
-   public ILogger Logger { get; set; };
-   public IRepository<Customer> Repository { get; private set; }
-   public LoggingCustomerRepository(IRepository<Customer> repository)
-   {
-      this.Repository = repository;
-   }
-   public Customer this[int id]
-   {
-      get { return Repository[id]; }
-   }
-   public void Add(Customer instance)
-   {
-      logger.Debug("Adding customer");
-      Repository.Add(instance);
-   }
+  public ILogger Logger { get; set; };
+  public IRepository<Customer> Repository { get; private set; }
+
+  public LoggingCustomerRepository(IRepository<Customer> repository)
+  {
+    this.Repository = repository;
+  }
+
+  public Customer this[int id]
+  {
+    get { return Repository[id]; }
+  }
+
+  public void Add(Customer instance)
+  {
+    logger.Debug("Adding customer");
+    Repository.Add(instance);
+  }
 }
 ```
 
@@ -130,17 +129,18 @@ Installers provide you a way to group related registrations into one class, to c
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+
 namespace Windsor.Tests.Generics
 {
-   public class RepositoryInstaller : IWindsorInstaller
-   {
-      public void Install(IWindsorContainer container, IConfigurationStore store)
-      {
-         container.Register(Classes.FromThisAssembly()
-                               .BasedOn(typeof(IRepository<>))
-                               .WithServiceAllInterfaces());
-      }
-   }
+  public class RepositoryInstaller : IWindsorInstaller
+  {
+    public void Install(IWindsorContainer container, IConfigurationStore store)
+    {
+      container.Register(Classes.FromThisAssembly()
+                            .BasedOn(typeof(IRepository<>))
+                            .WithServiceAllInterfaces());
+    }
+  }
 }
 ```
 

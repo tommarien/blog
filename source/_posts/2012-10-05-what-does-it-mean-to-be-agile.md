@@ -2,13 +2,9 @@
 layout: post
 title: What does it mean to be agile?
 date: 2012-10-05 22:30
-comments: true
-sharing: true
-footer: true
 categories:
-  - opinion
-  - agile
-published: true
+  - Opinion
+  - Agile
 ---
 
 According to the thesaurus, agile or agility, is a term to describe ease of movement. It can consist out of speed, flexibility or quick thinking.

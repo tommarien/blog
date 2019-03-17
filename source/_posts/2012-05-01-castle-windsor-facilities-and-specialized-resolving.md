@@ -2,13 +2,9 @@
 layout: post
 title: "Castle Windsor: Facilities and specialized resolving"
 date: 2012-05-01 21:29
-comments: true
-sharing: true
-footer: true
 categories:
-  - inversion of control
-  - castle windsor
-published: true
+  - Inversion Of Control
+  - Castle Windsor
 ---
 
 In my previous [post](/blog/2012/04/22/castle-windsor-how-to-register-components), I showed you how to register and resolve the most basic components.
@@ -18,19 +14,19 @@ In my previous [post](/blog/2012/04/22/castle-windsor-how-to-register-components
 
 I will briefly touch one of many facilities available for Castle Windsor: TypedFactoryFacility.
 
-## Array[T] - IEnumerable<T> - IList<T> - ICollection<T>
+## Array[T] - IEnumerable&lt;T&gt; - IList&lt;T&gt; - ICollection&lt;T&gt;
 
-What if one of your components depend on an array or a IEnumerable<T>. Consider following scenario:
+What if one of your components depend on an array or a IEnumerable&lt;T&gt;. Consider following scenario:
 
 ```csharp
 public class TaskExecutorWithArray
 {
-   private readonly ITask[] tasks;
+  private readonly ITask[] tasks;
 
-   public TaskExecutorWithArray(ITask[] tasks)
-   {
-      this.tasks = tasks;
-   }
+  public TaskExecutorWithArray(ITask[] tasks)
+  {
+    this.tasks = tasks;
+  }
 }
 ```
 
@@ -65,16 +61,18 @@ As this does not exist out of the box and it is so important to opt-in before re
 using Castle.Core.Configuration;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Resolvers.SpecializedResolvers;
+
 namespace Windsor.Tests.Facilities
 {
-   public class CollectionResolverFacility : IFacility
-   {
-      public void Init(IKernel kernel, IConfiguration facilityConfig)
-      {
-         kernel.Resolver.AddSubResolver(new CollectionResolver(kernel, true));
-      }
-      public void Terminate() {}
-   }
+  public class CollectionResolverFacility : IFacility
+  {
+    public void Init(IKernel kernel, IConfiguration facilityConfig)
+    {
+      kernel.Resolver.AddSubResolver(new CollectionResolver(kernel, true));
+    }
+
+    public void Terminate() {}
+  }
 }
 ```
 
@@ -88,7 +86,7 @@ var container = new WindsorContainer();
 container.AddFacility<CollectionResolverFacility>();
 ```
 
-## Func<T>
+## Func&lt;T&gt;
 
 What if you needed to resolve a Func ? You could just do this, albeit a little bit cumbersome:
 
@@ -124,9 +122,9 @@ container.Register(Component.For<ITask>().ImplementedBy<FirstTask>());
 Func<ITask> taskFunc = container.Resolve<Func<ITask>>();
 ```
 
-## Lazy<T>
+## Lazy&lt;T&gt;
 
-Last but not least how to use Lazy<T>, a recent addition to Castle Windsor (as of version 3)
+Last but not least how to use Lazy&lt;T&gt;, a recent addition to Castle Windsor (as of version 3)
 
 ```csharp
 // Initialize the container

@@ -2,13 +2,9 @@
 layout: post
 title: "Castle Windsor: Avoid memory leaks by learning the underlying mechanics"
 date: 2012-04-21 02:31
-comments: true
-sharing: true
-footer: true
 categories:
-  - inversion of control
-  - castle windsor
-published: true
+  - Inversion Of Control
+  - Castle Windsor
 ---
 
 ## Lifestyles
@@ -75,16 +71,17 @@ public class MyComponent: IComponent { }
 
 public interface IDisposableComponent: IComponent,IDisposable
 {
-   bool IsDisposed { get; }
+  bool IsDisposed { get; }
 }
 
 public class MyDisposableComponent: IDisposableComponent
 {
-   public bool IsDisposed { get; private set; }
-   public void Dispose()
-   {
+  public bool IsDisposed { get; private set; }
+
+  public void Dispose()
+  {
     IsDisposed = true;
-   }
+  }
 }
 
 public interface IService
@@ -94,11 +91,12 @@ public interface IService
 
 public class MyServiceUsingComponent: IService
 {
-   public IDisposableComponent Component { get; private set; }
-   public MyServiceUsingComponent(IDisposableComponent component)
-   {
-      Component = component;
-   }
+  public IDisposableComponent Component { get; private set; }
+
+  public MyServiceUsingComponent(IDisposableComponent component)
+  {
+    Component = component;
+  }
 }
 
 ```
