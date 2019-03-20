@@ -11,7 +11,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          {{ full_date(post.date, 'YYYY-MM-DD') }}
+          {{ date(post.date, 'MMM D, YYYY') }}
         </span>
         {%- if post.categories and post.categories.length -%}
           <span class="post-category">
@@ -27,6 +27,9 @@
           {{ __('posts.visits') }} 0
         </span>
         {%- endif -%}
+         <span class="post-reading-time">
+          {{ readingTime(post.content, 'min read') }}
+        </span>
       </div>
     </header>
 

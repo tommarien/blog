@@ -44,7 +44,8 @@
       }
     }
 
-    .post-visits {
+    .post-visits,
+    .post-reading-time {
       display: inline-block;
       font-size: 14px;
       color: $post-meta-font-color;
