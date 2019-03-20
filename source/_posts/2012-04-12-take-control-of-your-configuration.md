@@ -3,7 +3,8 @@ layout: post
 title: Take control of your configuration
 date: 2012-04-12 15:13
 categories:
-  - C#
+  - CSharp
+tags:
   - Test Driven Development
   - Configuration
 ---

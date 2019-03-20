@@ -3,7 +3,7 @@ layout: post
 title: "XP Teams: Tips and pitfalls"
 date: 2013-04-28 21:35
 updated: 2015-12-02 11:43
-categories:
+tags:
   - Agile
   - Extreme Programming
 ---

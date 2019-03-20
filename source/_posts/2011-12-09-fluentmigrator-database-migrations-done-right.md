@@ -3,9 +3,10 @@ layout: post
 title: FluentMigrator, database migrations done right
 date: 2011-12-09 19:53
 categories:
+  - CSharp
+tags:
   - Continuous Integration
   - FluentMigrator
-tags:
   - Database
   - Migrations
 ---

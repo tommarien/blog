@@ -3,6 +3,8 @@ layout: post
 title: "Castle Windsor: Avoid memory leaks by learning the underlying mechanics"
 date: 2012-04-21 02:31
 categories:
+  - CSharp
+tags:
   - Inversion Of Control
   - Castle Windsor
 ---

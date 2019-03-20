@@ -3,6 +3,8 @@ layout: post
 title: Micro-classes as building blocks
 date: 2011-10-30 22:32
 categories:
+  - CSharp
+tags:
   - Code Quality
   - Object Oriented
   - Opinion

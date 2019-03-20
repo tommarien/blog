@@ -2,7 +2,7 @@
 layout: post
 title: What does it mean to be agile?
 date: 2012-10-05 22:30
-categories:
+tags:
   - Opinion
   - Agile
 ---

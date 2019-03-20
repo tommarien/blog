@@ -2,10 +2,10 @@
 layout: post
 title: "Deadlock heaven: Serializable IsolationLevel"
 date: 2012-01-30 14:25
-
 categories:
-  - Performance
+  - CSharp
 tags:
+  - Performance
   - Database
   - SqlServer
 ---

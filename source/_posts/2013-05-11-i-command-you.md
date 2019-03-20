@@ -3,6 +3,8 @@ layout: post
 title: I command you
 date: 2013-05-11 21:03
 categories:
+  - CSharp
+tags:
   - Command Query Separation
   - Castle Windsor
 ---

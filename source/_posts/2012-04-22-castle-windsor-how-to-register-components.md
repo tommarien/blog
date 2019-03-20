@@ -3,6 +3,8 @@ layout: post
 title: "Castle Windsor: How to register components"
 date: 2012-04-22 21:28
 categories:
+  - CSharp
+tags:
   - Inversion Of Control
   - Castle Windsor
 ---

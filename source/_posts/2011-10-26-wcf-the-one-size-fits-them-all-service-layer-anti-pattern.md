@@ -3,6 +3,8 @@ layout: post
 title: Wcf, the one size fits them all Service Layer anti-pattern
 date: 2011-10-26 08:30
 categories:
+  - CSharp
+tags:
   - Architecture
   - Opinion
   - WCF

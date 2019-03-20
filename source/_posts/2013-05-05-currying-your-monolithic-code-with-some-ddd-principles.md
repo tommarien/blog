@@ -3,6 +3,8 @@ layout: post
 title: Currying your monolithic code with basic DDD principles
 date: 2013-05-05 16:17
 categories:
+  - CSharp
+tags:
   - Code Quality
   - Domain Driven Design
   - Object Oriented

@@ -3,8 +3,9 @@ layout: post
 title: DateTime.Now, the test-driven paradox
 date: 2011-11-05 22:56
 categories:
-  - Test Driven Design
+  - CSharp
 tags:
+  - Test Driven Design
   - Mock
   - Clock
   - Time

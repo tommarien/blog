@@ -3,6 +3,8 @@ layout: post
 title: Entities vs Value objects
 date: 2011-10-31 20:39
 categories:
+  - CSharp
+tags:
   - Architecture
   - Domain Driven Design
   - Object Oriented

@@ -2,7 +2,7 @@
 layout: post
 title: Why didn't i take the blue pill ?
 date: 2011-10-21 21:09
-categories:
+tags:
   - Code Quality
   - Opinion
   - Rants

@@ -3,6 +3,8 @@ layout: post
 title: "Castle Windsor: Avoiding runtime errors due to misconfigured components"
 date: 2013-04-26 23:15
 categories:
+  - CSharp
+tags:
   - Inversion Of Control
   - Castle Windsor
 ---
