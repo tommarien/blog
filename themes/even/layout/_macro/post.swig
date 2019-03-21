@@ -11,7 +11,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          {{ date(post.date, 'MMM D, YYYY') }}
+          {{ date(post.date, config.date_format) }}
         </span>
         {%- if post.categories and post.categories.length -%}
           <span class="post-category">
