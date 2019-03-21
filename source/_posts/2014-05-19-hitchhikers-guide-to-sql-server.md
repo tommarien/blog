@@ -2,17 +2,16 @@
 layout: post
 title: "Hitchhiker's guide to Sql Server"
 date: 2014-05-19 12:40:30 +0200
-comments: true
-categories:
-- sql server
-- performance
-- tuning
+tags:
+  - SqlServer
+  - Performance
+  - Tuning
 ---
+
 More and more people are taking the **'There is no database'** statement to it's limit, i think it's time to share some insights into how we could let SQLServer help us when investigating performance issues.
 
-{% include _toc.html %}
-
 ## Initial Setup
+
 When it comes to performance on SQLServer these are the two most important factors that have a direct impact on system performance:
 
 - Memory
@@ -24,10 +23,12 @@ As we are running on a filesystem where disk fragmentation is costly and unavoid
 - **AutoGrowth**: Default is to grow 1 Mb a time, set this to a percentage or at least 1/10 of the initial size.
 
 ## While running
-Remember SQLServer is your friend, using Actual Query plan while executing a query can give you hints about the underlying problem.  But in general if you don't know where to start you could use built-in statistics:
+
+Remember SQLServer is your friend, using Actual Query plan while executing a query can give you hints about the underlying problem. But in general if you don't know where to start you could use built-in statistics:
 
 ### Top 25 Missing indexes
-{% highlight sql %}
+
+```sql
 SELECT TOP 25
 dm_mid.database_id AS DatabaseID,
 dm_migs.avg_user_impact*(dm_migs.user_seeks+dm_migs.user_scans) Avg_Estimated_Impact,
@@ -55,7 +56,7 @@ INNER JOIN sys.dm_db_missing_index_details dm_mid
 ON dm_mig.index_handle = dm_mid.index_handle
 WHERE dm_mid.database_ID = DB_ID()
 ORDER BY Avg_Estimated_Impact DESC
-{% endhighlight %}
+```
 
 > This query will output the top 25 missing indexes ordered by estimated impact, look at indexes where the avg estimated impact is above 100000 and are frequently used (Try to avoid the INCLUDE indexes at first).
 
@@ -63,7 +64,7 @@ If the above query does not help you in any way, it could mean that the indexes 
 
 ### Index Fragmentation
 
-{% highlight sql %}
+```sql
 SELECT dbschemas.[name] as 'Schema',
 dbtables.[name] as 'Table',
 dbindexes.[name] as 'Index',
@@ -76,18 +77,19 @@ INNER JOIN sys.indexes AS dbindexes ON dbindexes.[object_id] = indexstats.[objec
 AND indexstats.index_id = dbindexes.index_id
 WHERE indexstats.database_id = DB_ID()
 ORDER BY indexstats.avg_fragmentation_in_percent desc
-{% endhighlight %}
+```
 
 > Look for indexes that have a fragmentation level higher than 30 % and a high page count (by default on sql server the page size is 8K).
 
 ### Rebuild Indexes
 
-{% highlight sql %}
+```sql
 ALTER INDEX PK_TABLE ON [dbo].[TABLE]
 	REBUILD WITH (FILLFACTOR = 90 , STATISTICS_NORECOMPUTE = OFF)
-{% endhighlight %}
+```
 
 #### FILLFACTOR?
+
 Usually, the higher the better (max is 100), but it depends on how often the table changes and what the index contains. Two examples:
 
 - PK on a int identity key, use fill factor 100% as new records are always created at the bottom (normally index fragmentation on these should be low, or a lot of records have been deleted)
@@ -95,14 +97,14 @@ Usually, the higher the better (max is 100), but it depends on how often the tab
 
 ### Monitor Page Splits
 
-{% highlight sql %}
+```sql
 select Operation, AllocUnitName, COUNT(*) as NumberofIncidents
 from   ::fn_dblog(null, null)
 where Operation = N'LOP_DELETE_SPLIT'
 group by Operation, AllocUnitName
-{% endhighlight %}
+```
 
 ## Further reading
 
-- [Effective Clustered Indexes](https://www.simple-talk.com/sql/learn-sql-server/effective-clustered-indexes){:target="_blank"}
-- [http://www.mssqltips.com/sqlservertip/1642/finding-a-better-candidate-for-your-sql-server-clustered-indexes](http://www.mssqltips.com/sqlservertip/1642/finding-a-better-candidate-for-your-sql-server-clustered-indexes){:target="_blank"}
+- [Effective Clustered Indexes](https://www.simple-talk.com/sql/learn-sql-server/effective-clustered-indexes)
+- [http://www.mssqltips.com/sqlservertip/1642/finding-a-better-candidate-for-your-sql-server-clustered-indexes](http://www.mssqltips.com/sqlservertip/1642/finding-a-better-candidate-for-your-sql-server-clustered-indexes)
