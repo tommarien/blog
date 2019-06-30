@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.8.0"
+    "version": "3.9.0"
   },
   "scripts": {
     "serve": "hexo server",
@@ -11,7 +11,7 @@
     "deploy": "hexo clean;hexo deploy"
   },
   "dependencies": {
-    "hexo": "^3.8.0",
+    "hexo": "^3.9.0",
     "hexo-browsersync": "^0.3.0",
     "hexo-deployer-git": "^1.0.0",
     "hexo-footnotes": "^1.0.2",
@@ -22,7 +22,7 @@
     "hexo-generator-tag": "^0.2.0",
     "hexo-reading-time": "^1.0.3",
     "hexo-renderer-ejs": "^0.3.1",
-    "hexo-renderer-marked": "^0.3.2",
+    "hexo-renderer-marked": "^1.0.1",
     "hexo-renderer-scss": "^1.2.0",
     "hexo-server": "^0.3.3",
     "hexo-tag-figure": "^0.4.1"
