@@ -109,3 +109,8 @@ feed:
   content_limit: 350
   content_limit_delim: " "
   order_by: -date
+
+node_sass:
+  outputStyle: nested
+  precision: 5
+  sourceComments: false
