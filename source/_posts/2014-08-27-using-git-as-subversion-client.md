@@ -19,7 +19,7 @@ They might be thinking of going to _Git_, but most of them are afraid of the lea
 
 As a fan of [Chocolatey](http://chocolatey.org) as machine package manager, just enter at command prompt
 
-```
+```shell
 cinst git
 ```
 
@@ -29,19 +29,19 @@ Or [download](http://msysgit.github.io) the installer for git (at the moment it'
 
 If your Subversion has the default trunk, branches, tags layout
 
-```
+```shell
 git svn clone -s <repo_url> --prefix svn/
 ```
 
 The -s switch is a shortcut for
 
-```
+```shell
 git svn clone -T trunk --t tags --b branches <repo_url> --prefix svn/
 ```
 
 This will checkout the trunk of the repository by default. Now suppose your repository already had a branch called Test:
 
-```
+```shell
 > git branch -a
 * master
   remotes/svn/Test
@@ -54,7 +54,7 @@ As the default approach above will crawl trough all svn revisions which can be v
 
 ### Get first revision of directory in gigantic repository
 
-```
+```shell
 svn log <repo_url>
 ```
 
@@ -62,19 +62,19 @@ The lowest/first revision number is what you are looking for, if you want full h
 
 ### Checkout repository
 
-```
+```shell
 git svn clone -s <repo_url> --prefix svn/ -r <first-revision>
 ```
 
 This will initialize an empty git repository, now get the trunk
 
-```
+```shell
 git svn rebase
 ```
 
 If you would look at your branches you would see that the test branch is not there in this case !
 
-```
+```shell
 > git branch -a
 * master
   remotes/svn/trunk
@@ -82,13 +82,13 @@ If you would look at your branches you would see that the test branch is not the
 
 To get the remote branch to appear you need to
 
-```
+```shell
 git svn fetch
 ```
 
 ## Updating your repository
 
-```
+```shell
 git svn rebase
 ```
 
@@ -96,7 +96,7 @@ It will fetch latest changes from the trunk and will try to rebase your work on 
 
 ## Committing your changes
 
-```
+```shell
 git svn dcommit
 ```
 

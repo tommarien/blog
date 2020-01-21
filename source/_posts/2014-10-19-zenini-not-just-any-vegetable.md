@@ -15,7 +15,7 @@ As i resend xml configuration files, i love the simplicity of yaml and the older
 
 But if you would like to read ini files in .net you have to do a dll import:
 
-```charp
+```csharp
 [DllImport("KERNEL32.DLL",   EntryPoint = "GetPrivateProfileStringW",
   SetLastError=true,
   CharSet=CharSet.Unicode, ExactSpelling=true,

@@ -12,7 +12,7 @@ It started by just typing over TI-BASIC from the manual, supplied with the Home 
 
 This Home Computer stopped working when i fried the motherboard by running the following code:
 
-```
+```basic
 100 CALL SOUND(5000)
 ```
 
