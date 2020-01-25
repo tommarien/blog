@@ -33,7 +33,7 @@ So i thought of creating a simple relaxed ini parsing library called [ZenIni](ht
 
 ## Getting started
 
-```
+```shell
 Install-Package zenini
 ```
 

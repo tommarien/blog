@@ -7,7 +7,7 @@ tags:
   - Antipattern
 ---
 
-{% figure right /images/0001_scissorglue_billjunk.jpg 300 %}
+![](/images/0001_scissorglue_billjunk.jpg)
 
 We use mocks, stubs or fakes when writing tests, mostly using a mocking framework of choice ([Moq](https://github.com/Moq/moq4), [RhinoMocks](http://hibernatingrhinos.com/oss/rhino-mocks), [NSubstitute](http://nsubstitute.github.io)).
 

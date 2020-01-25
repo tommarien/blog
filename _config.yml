@@ -80,24 +80,65 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: even
+theme: cactus
 
 theme_config:
-  copyright:
-    enable: false
-  fancybox: false
-  google_analytics: UA-50637133-1
-  social:
+  # Customize the logo (i.e., the cactus) in the header.
+  # Options:
+  #   - enabled: whether to show (true) or hide (false) the logo.
+  #   - width: width of the logo in pixel units
+  #   - height: height of the logo in pixel units
+  #   - url: where the logo can be found
+  #   - gravatar: whether to use your Gravatar as the logo
+  logo:
+    enabled: true
+    width: 50
+    height: 50
+    url: /images/logo.png
+    gravatar: true
+
+  # Customize the favicons.
+  # Cactus supports a limited set of the three most important icons:
+  #   - desktop: The classic favion.ico file.
+  #   - android: A 192x192 PNG file.
+  #   - apple:  A 180x180 PNG file.
+  # These can be generated with http://realfavicongenerator.net/
+  # Options:
+  #   - url: where the icon can be found
+  #   - gravatar: whether to create a favicon from your Gravatar
+  favicon:
+    desktop:
+      url: /images/favicon.ico
+      gravatar: true
+    android:
+      url: /images/favicon-192x192.png
+      gravatar: true
+    apple:
+      url: /images/apple-touch-icon.png
+      gravatar: true
+  colorscheme: white
+  nav:
+    home: /
+    articles: /archives/
+    about: /about/
+    search: /search/
+    #projects: http://github.com/tommarien
+  gravatar:
     email: tommarien@gmail.com
+  google_analytics:
+    enabled: true
+    id: UA-50637133-1
+  social_links:
+    github: http://github.com/tommarien
     twitter: http://twitter.com/Tom_Marien
+    #facebook: /
     linkedin: http://linkedin.com/in/tommarien
-    github: https://github.com/tommarien
-  menu:
-    Home: /
-    Archives: /archives/
-    # Tags: /tags
-    # Categories: /categories
-    About: /about
+    mail: tommarien@gmail.com
+  page_width: 48
+  posts_overview:
+    show_all_posts: false
+    post_count: 10
+    sort_updated: false
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -105,18 +146,3 @@ deploy:
   type: git
   repo: git@github.com:tommarien/tommarien.github.io.git
   branch: master
-
-feed:
-  type: atom
-  path: atom.xml
-  limit: 20
-  hub:
-  content:
-  content_limit: 350
-  content_limit_delim: " "
-  order_by: -date
-
-node_sass:
-  outputStyle: nested
-  precision: 5
-  sourceComments: false

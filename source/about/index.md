@@ -6,7 +6,7 @@ modified: 2015-05-06
 
 My interest in typing letters on a keyboard that can be interpreted by a compiler started very young. It all began when i got my first PC from my parents, back in the days they called it a Home Computer, a Texas Instruments with some sort of prehistoric OS on it.
 
-{% figure right /images/ti-994a.jpg %}
+![](/images/ti-994a.jpg)
 
 It started by just typing over TI-BASIC from the manual, supplied with the Home Computer. After typing over about 3000 lines of code, the code usually had some sort of syntax error in it. So i tried to understand the code that i had typed over.
 
