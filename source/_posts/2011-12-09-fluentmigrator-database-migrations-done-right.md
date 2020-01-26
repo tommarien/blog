@@ -75,7 +75,7 @@ public class M0001_Add_Person : Migration
 - Add an app.config file for it and add a named connectionstring to your configuration, i called it "Dummy", create the referenced database on your sql server.
 - Build your class library, open up a command prompt and type (depending on your location of your libraries, dbtype etc)
 
-```
+```shell
 ..\Lib\Migrate.exe -a ..\Blog.Migrations\bin\Debug\Blog.Migrations.dll -db SqlServer2008 -conn "Dummy"
 ```
 
@@ -92,7 +92,7 @@ In the table VersionInfo there will be a record with in our situation the number
 
 So let's try to undo it (command prompt):
 
-```
+```shell
 ..\Lib\Migrate.exe -a ..\Blog.Migrations\bin\Debug\Blog.Migrations.dll -db SqlServer2008 -conn "Dummy" -task rollback:all
 ```
 

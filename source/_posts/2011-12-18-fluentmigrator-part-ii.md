@@ -49,7 +49,7 @@ namespace Blog.Migrations
 
 Just for reference i will add the command prompt syntax for the last time
 
-```
+```shell
 ..\Lib\Migrate.exe -a .\Blog.Migrations\bin\Debug\Blog.Migrations.dll -db SqlServer2008
 ```
 
@@ -88,7 +88,7 @@ INSERT INTO Personalia.Person (FirstName, LastName, Email) VALUES ('John','Doe',
 
 Remember that we could just rollback 1 step (1 migration) with following command (see [Wiki](https://github.com/schambers/fluentmigrator/wiki/Command-Line-Runner-Options))
 
-```
+```shell
 ..\Lib\Migrate.exe -a .\Blog.Migrations\bin\Debug\Blog.Migrations.dll -db SqlServer2008 -task rollback -steps 1
 ```
 
