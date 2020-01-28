@@ -4,8 +4,10 @@ tags:
   - Career
 ---
 
-I started out in 1999 as a _Visual Basic for Applications_ developer. After my studies didn't went as expected, i started developing application. This was on the edge of the **Y2K** bug.
+In the spring of '99, softwired to be 1999 (**Y2K**), my career started as a _Visual Basic for Applications_ developer. While i am writing this down i can hear your mockery! The company used _Microsoft Access_ as **RAD** tool, to build invoicing software on demand. After a miscommunication about working hours (max. 8 per day 😤) and contractual disagreement this ended abruptly.
 
-After the initial _'grooming'_, i quickly realized that developing _VBA_ applications wasn't really my thing and decided to move on.
+Returned to the job market and after a surprising job interview, i got hired as a **support/network** engineer. After a couple of courses and with some help of very skilled colleagues, i managed to maintain networks for about 2 years, where i did general support, wiring and setups of _Windows NT 4_ networks. Although i was a weird jump as a software developer, i still reap the benefits from this period.
 
-After a surprising job interview, i was hired as a support/network engineer. After some courses and training, i've maintained networks for about 2 years. Did wiring and setup of Windows NT 4 networks. By supporting different clients by telephone or on-site, my communication skills evolved quickly.
+> Understanding a little bit of network topology is a necessity for a software engineer.
+
+But the "itch" got worse, i talked to my manager and convinced him to give me a position as a _Visual Basic_ Developer in his _Visual FoxPro_ development unit.
