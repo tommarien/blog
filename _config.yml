@@ -45,9 +45,9 @@ highlight:
 #  tab_replace:
 
 prism_plugin:
-  mode: preprocess   # realtime/preprocess
+  mode: preprocess # realtime/preprocess
   theme: tomorrow
-  line_number: false    # default false
+  line_number: false # default false
 #  custom_css: 'path/to/your/custom.css'     # optional
 
 # Home page setting
@@ -125,6 +125,9 @@ theme_config:
     #projects: http://github.com/tommarien
   gravatar:
     email: tommarien@gmail.com
+  disqus:
+    enabled: true
+    shortname: tommariengithubio
   google_analytics:
     enabled: true
     id: UA-50637133-1
