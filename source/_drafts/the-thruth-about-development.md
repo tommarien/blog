@@ -1,8 +1,8 @@
 ---
 title: The thruth about development
 tags:
-  - Opinion
-  - Rant
+  - opinion
+  - rant
 ---
 
 After a career of 2 decades as a professional developer, i wanted to share my point of view to everyone who is interested.

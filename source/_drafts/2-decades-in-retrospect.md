@@ -1,7 +1,7 @@
 ---
 title: 2 Decades in retrospect
 tags:
-  - Career
+  - career
 ---
 
 In the spring of '99, softwired to be 1999 (**Y2K**), my career started as a _Visual Basic for Applications_ developer. The company used _Microsoft Access_ as **RAD** tool, to build invoicing software on demand. After a "miscommunication" about working hours (max. 8 per day) and contractual disagreement this ended abruptly.

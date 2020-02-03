@@ -3,10 +3,10 @@ layout: post
 title: How to embed an image into an EPL label
 date: 2015-06-20T14:01:26+01:00
 categories:
-  - CSharp
+  - csharp
 tags:
-  - Epl
-  - Performance
+  - epl
+  - performance
 ---
 
 Our current project, has the ability to generate and combine [EPL](https://en.wikipedia.org/wiki/Eltron_Programming_Language) labels from different sources. One of the scenarios required to embed an image (png) into a generated label.

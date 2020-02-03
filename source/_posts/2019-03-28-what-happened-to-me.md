@@ -1,7 +1,7 @@
 ---
 title: What happened to me?
 tags:
-  - Career
+  - career
 date: 2019-03-28 20:37:44
 ---
 

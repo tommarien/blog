@@ -3,8 +3,8 @@ layout: post
 title: Don't mock yourself
 date: 2015-04-11T20:28:50+01:00
 tags:
-  - Test Driven Development
-  - Antipattern
+  - test driven development
+  - antipattern
 ---
 
 ![](/images/0001_scissorglue_billjunk.jpg)
