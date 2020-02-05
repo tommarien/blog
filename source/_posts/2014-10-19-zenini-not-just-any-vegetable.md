@@ -3,10 +3,10 @@ layout: post
 title: Zenini not just any vegetable
 date: 2014-10-19 14:39:15 +0200
 categories:
-  - CSharp
+  - csharp
 tags:
-  - Open Source
-  - Ini
+  - open source
+  - ini
 ---
 
 Sometimes we, developers, tend to have an itch. When i saw that there was a new kid in town ([AppVeyor](https://ci.appveyor.com/projects)) that does free open source continuous integration, i just had to scratch.

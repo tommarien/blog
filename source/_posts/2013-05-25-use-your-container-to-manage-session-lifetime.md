@@ -3,11 +3,11 @@ layout: post
 title: Use your container to manage Session lifetime
 date: 2013-05-25 10:00
 categories:
-  - CSharp
+  - csharp
 tags:
-  - NHibernate
-  - Castle Windsor
-  - Inversion Of Control
+  - nhibernate
+  - castle windsor
+  - inversion of control
 ---
 
 There are many blog posts on how to manage the lifetime of ISession in a web application. Mainly because only ISessionFactory is thread-safe, which is a good thing because your ISession instance acts as a unit of work. For a web application the advised solution is to use the _session-per-request_ pattern.

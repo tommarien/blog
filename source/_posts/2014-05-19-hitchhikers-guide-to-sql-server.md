@@ -2,10 +2,11 @@
 layout: post
 title: "Hitchhiker's guide to Sql Server"
 date: 2014-05-19 12:40:30 +0200
+categories: 
+  - sql server
 tags:
-  - SqlServer
-  - Performance
-  - Tuning
+  - performance
+  - tuning
 ---
 
 More and more people are taking the **'There is no database'** statement to it's limit, i think it's time to share some insights into how we could let SQLServer help us when investigating performance issues.

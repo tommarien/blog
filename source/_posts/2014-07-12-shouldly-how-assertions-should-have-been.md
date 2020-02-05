@@ -3,10 +3,10 @@ layout: post
 title: "Shouldly: how assertions should have been all along"
 date: 2014-07-12 20:47:00 +0200
 categories:
-  - CSharp
+  - csharp
 tags:
-  - Opinion
-  - Test Driven Development
+  - opinion
+  - test driven development
 ---
 
 A couple of years ago i published a [comparison post on NUnit vs MsTest](/blog/2012/04/16/showdown-mstest-vs-nunit). One of the main benefits i felt NUnit had in comparison with MsTest was the richness of the assertion library it included.

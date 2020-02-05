@@ -4,8 +4,8 @@ title: Using git as subversion client
 date: 2014-08-27 07:23:40 +0200
 updated: 2014-10-05 09:45:35 +0200
 tags:
-  - Git
-  - Subversion
+  - git
+  - subversion
 ---
 
 Almost a decade ago, a company I worked for, started using _Subversion_ which was a great step forward coming from _Visual Source Safe_.

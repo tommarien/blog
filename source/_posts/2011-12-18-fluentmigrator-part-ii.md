@@ -3,12 +3,12 @@ layout: post
 title: FluentMigrator Part II
 date: 2011-12-18 17:12
 categories:
-  - CSharp
+  - csharp
 tags:
-  - Continuous Integration
-  - FluentMigrator
-  - Database
-  - Migrations
+  - continuous integration
+  - fluent migrator
+  - database
+  - migrations
 ---
 
 As a result of [my previous post](/blog/2011/12/09/fluentmigrator-database-migrations-done-right) of FluentMigrator, i thought publishing a follow-up article would be a great idea.  Meanwhile I joined the team of FluentMigrator as a contributor.   I would like to continue on the previous post and show some more common scenario's.

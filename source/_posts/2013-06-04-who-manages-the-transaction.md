@@ -3,11 +3,11 @@ layout: post
 title: Who manages the transaction?
 date: 2013-06-04 20:00
 categories:
-  - CSharp
+  - csharp
 tags:
-  - NHibernate
-  - Castle Windsor
-  - Inversion Of Control
+  - nhibernate
+  - castle windsor
+  - inversion of control
 ---
 
 In my last [post](/blog/2013/05/25/use-your-container-to-manage-session-lifetime) we talked about letting our container manage our ISession lifetime. Immediately after publishing this post, i've got a lot of reactions considering the management of transactions, more specifically about issuing a rollback when an exception has been thrown.

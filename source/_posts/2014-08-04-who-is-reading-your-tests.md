@@ -3,10 +3,10 @@ layout: post
 title: Who is reading your tests?
 date: 2014-08-04 13:14:13 +0200
 categories:
-  - CSharp
+  - csharp
 tags:
-  - Opinion
-  - Test Driven Development
+  - opinion
+  - test driven development
 ---
 
 As the entire **"TDD is dead"** revolt is taking place, let's not talk about the importance of tests nor about the difference between integration, unit and load tests. But instead ask ourselves the following question if we do decide to add tests to our project:

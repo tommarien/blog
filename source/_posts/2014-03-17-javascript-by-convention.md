@@ -3,10 +3,10 @@ layout: post
 title: Javascript by convention
 date: 2014-03-17 11:29
 categories:
-  - Javascript
+  - javascript
 tags:
-  - Opinion
-  - Code Quality
+  - opinion
+  - code quality
 ---
 
 Usually when doing javascript, you'll see a lot of script inside a page. For instance when we add a date picker on a text input, you could add a script block to the page and do the necessary initialization there:

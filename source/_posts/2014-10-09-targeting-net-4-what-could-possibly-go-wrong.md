@@ -3,9 +3,9 @@ layout: post
 title: Targeting .NET 4.0, what could possibly go wrong?
 date: 2014-10-09 19:45:21 +0200
 tags:
-  - Continuous Integration
-  - Pitfalls
-  - DotNET4
+  - continuous integration
+  - pitfalls
+  - dotnet 4
 ---
 
 While .NET framework is a highly compatible, in-place update to the Microsoft .NET Framework 4, there are some rough edges that you need to be aware of.
