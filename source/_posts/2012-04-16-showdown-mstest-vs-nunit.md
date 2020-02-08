@@ -3,8 +3,7 @@ layout: post
 title: ! "Showdown: MsTest Vs NUnit"
 date: 2012-04-16 20:15
 tags:
-  - Opinion
-  - Test Driven Development
+  - test driven development
 ---
 
 More and more **businesses** these days seem to understand the **value** of **unit-tests**. They want a safety net to protect their software investment.

@@ -2,10 +2,8 @@
 layout: post
 title: FluentMigrator Part II
 date: 2011-12-18 17:12
-categories:
-  - csharp
 tags:
-  - continuous integration
+  - csharp
   - fluent migrator
   - database
   - migrations

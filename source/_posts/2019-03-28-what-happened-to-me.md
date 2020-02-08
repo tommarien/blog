@@ -1,8 +1,8 @@
 ---
 title: What happened to me?
+date: 2019-03-28 20:37:44
 tags:
   - career
-date: 2019-03-28 20:37:44
 ---
 
 Has it been almost three years since my last blog post 🤦‍♂️?

@@ -2,11 +2,9 @@
 layout: post
 title: "What Is the Point of the #region Preprocessor Directive?"
 date: 2011-10-22 10:00
-categories:
-  - CSharp
 tags:
-  - Code Quality
-  - Opinion
+  - csharp
+  - code quality
 ---
 
 ### Definition taken from MSDN

@@ -2,9 +2,8 @@
 layout: post
 title: Who manages the transaction?
 date: 2013-06-04 20:00
-categories:
-  - csharp
 tags:
+  - csharp
   - nhibernate
   - castle windsor
   - inversion of control

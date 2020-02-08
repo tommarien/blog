@@ -2,14 +2,13 @@
 layout: post
 title: I let you know that something happened
 date: 2013-05-21 21:20
-categories:
-  - csharp
 tags:
+  - csharp
   - command query separation
   - castle windsor
 ---
 
-How do you handle follow-up actions of important things that happened in your code? For instance when a new user registered on your site you need to send him a registration verification link. Are you just adding the necessary pieces of code into your existing code block? What happens if you need to also send an email to the administrator of the website, so he may already setup the necessary roles for the newly registered user? Or you need to automatically create a backorder when stock of a specific product runs out?
+How do you handle follow-up actions of important things that happened in your code? For instance when a new user registered on your site you need to send him a registration verification link. Are you just adding the necessary pieces of code into your existing code block? What happens if you need to also send an email to the administrator of the website, so he may already setup the necessary roles for the newly registered user? Or you need to automatically create a back-order when stock of a specific product runs out?
 
 ## The event
 

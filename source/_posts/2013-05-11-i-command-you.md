@@ -2,11 +2,10 @@
 layout: post
 title: I command you
 date: 2013-05-11 21:03
-categories:
-  - CSharp
 tags:
-  - Command Query Separation
-  - Castle Windsor
+  - csharp
+  - command query separation
+  - castle windsor
 ---
 
 Today we are going to talk about <a href="http://en.wikipedia.org/wiki/Command%E2%80%93query_separation" target="_blank">CQS</a> (Command Query Separation). In this blog post i will focus on the command part. Commands are simple objects that instruct our application to do something. I will show you the most simple implementation possible, combined with the power of Castle Windsor, which will act as our command handler registry.

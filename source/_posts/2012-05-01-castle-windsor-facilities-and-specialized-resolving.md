@@ -2,11 +2,10 @@
 layout: post
 title: "Castle Windsor: Facilities and specialized resolving"
 date: 2012-05-01 21:29
-categories:
-  - CSharp
 tags:
-  - Inversion Of Control
-  - Castle Windsor
+  - csharp
+  - inversion of control
+  - castle windsor
 ---
 
 In my previous [post](/blog/2012/04/22/castle-windsor-how-to-register-components), I showed you how to register and resolve the most basic components.

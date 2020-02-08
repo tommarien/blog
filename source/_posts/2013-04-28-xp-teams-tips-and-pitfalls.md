@@ -4,8 +4,8 @@ title: "XP Teams: Tips and pitfalls"
 date: 2013-04-28 21:35
 updated: 2015-12-02 11:43
 tags:
-  - Agile
-  - Extreme Programming
+  - agile
+  - extreme programming
 ---
 
 ## There is an ‘I’ in Silence

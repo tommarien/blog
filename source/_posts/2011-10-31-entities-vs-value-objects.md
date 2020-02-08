@@ -2,15 +2,14 @@
 layout: post
 title: Entities vs Value objects
 date: 2011-10-31 20:39
-categories:
-  - CSharp
 tags:
-  - Architecture
-  - Domain Driven Design
-  - Object Oriented
+  - csharp
+  - architecture
+  - domain driven design
+  - object oriented
 ---
 
-I know this is a very popular topic in "Domain Driven Design" fora's, but still most of the definitions still remain vague. As these are the two corner stones of a domain model, i thought they deserved some attention.
+I know this is a very popular topic in "Domain Driven Design" forums, but still most of the definitions still remain vague. As these are the two corner stones of a domain model, i thought they deserved some attention.
 
 ### Entities
 
@@ -42,9 +41,9 @@ So suppose the first "billy" came from Belgium and the second one came from Engl
 
 So an entity is not defined by the value of its properties, they are defined by their reference (most ORM's cover this) or in database terms both entities would be the same if they share the same identity value (albeit int, guid, long, string, ...).
 
-> Be carefull with this, because it's not because an object has an identity value, that makes it an entity, if the identity is only there for persistence reasons it's not entity.
+> Be careful with this, because it's not because an object has an identity value, that makes it an entity, if the identity is only there for persistence reasons it's not entity.
 
-Model your entities accordingly, overriding equals and gethashcode to take the identity value into account. For an example of this see [Sharp-Architecture](https://github.com/sharparchitecture/Sharp-Architecture/blob/master/Solutions/SharpArch.Domain/DomainModel/EntityWithTypedId.cs "EntityWithTypedId").
+Model your entities accordingly, overriding `equals` and `getHashCode` to take the identity value into account. For an example of this see [Sharp-Architecture](https://github.com/sharparchitecture/Sharp-Architecture/blob/master/Solutions/SharpArch.Domain/DomainModel/EntityWithTypedId.cs "EntityWithTypedId").
 
 ### Value objects
 

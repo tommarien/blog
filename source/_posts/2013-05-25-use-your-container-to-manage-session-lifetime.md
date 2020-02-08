@@ -2,9 +2,8 @@
 layout: post
 title: Use your container to manage Session lifetime
 date: 2013-05-25 10:00
-categories:
-  - csharp
 tags:
+  - csharp
   - nhibernate
   - castle windsor
   - inversion of control

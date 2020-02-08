@@ -2,12 +2,11 @@
 layout: post
 title: Currying your monolithic code with basic DDD principles
 date: 2013-05-05 16:17
-categories:
-  - CSharp
 tags:
-  - Code Quality
-  - Domain Driven Design
-  - Object Oriented
+  - csharp
+  - code quality
+  - domain driven design
+  - object oriented
 ---
 
 Even the most monolithic code base could benefit by introducing some of the most basic principles of Domain Driven Design.  The following blog post is a reproduction of a real life code base, in a simplified form, but not far from reality.

@@ -2,9 +2,8 @@
 layout: post
 title: Zenini not just any vegetable
 date: 2014-10-19 14:39:15 +0200
-categories:
-  - csharp
 tags:
+  - csharp
   - open source
   - ini
 ---

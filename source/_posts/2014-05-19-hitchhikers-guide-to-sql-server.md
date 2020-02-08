@@ -2,9 +2,8 @@
 layout: post
 title: "Hitchhiker's guide to Sql Server"
 date: 2014-05-19 12:40:30 +0200
-categories: 
+tags: 
   - sql server
-tags:
   - performance
   - tuning
 ---

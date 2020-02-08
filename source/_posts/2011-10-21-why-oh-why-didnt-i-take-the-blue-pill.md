@@ -3,9 +3,8 @@ layout: post
 title: Why didn't i take the blue pill ?
 date: 2011-10-21 21:09
 tags:
-  - Code Quality
-  - Opinion
-  - Rants
+  - code quality
+  - rants
 ---
 
 Half a decade ago, my interest began to grow for **Test Driven Development**. After some research i stumbled my way into the wonderful world of [NUnit](http://nunit.org).

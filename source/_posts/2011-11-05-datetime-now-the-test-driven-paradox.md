@@ -2,13 +2,12 @@
 layout: post
 title: DateTime.Now, the test-driven paradox
 date: 2011-11-05 22:56
-categories:
-  - CSharp
 tags:
-  - Test Driven Design
-  - Mock
-  - Clock
-  - Time
+  - csharp
+  - test driven design
+  - mock
+  - clock
+  - time
 ---
 
 Although i know already a lot has been written about this dilemma, i never saw a good and descriptive enough solution to this problem. Let's first start by situating the problem with a simple code example.

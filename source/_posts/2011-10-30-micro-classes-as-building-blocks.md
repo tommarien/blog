@@ -2,12 +2,10 @@
 layout: post
 title: Micro-classes as building blocks
 date: 2011-10-30 22:32
-categories:
-  - CSharp
 tags:
-  - Code Quality
-  - Object Oriented
-  - Opinion
+  - csharp
+  - code quality
+  - object oriented
 ---
 
 I am pretty sure that everyone already used a micro-class in code. Everytime you use a static class that contains only constants, you are using a micro-class (for example **ResourceKeys** or **Roles**).

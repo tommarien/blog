@@ -2,12 +2,10 @@
 layout: post
 title: Wcf, the one size fits them all Service Layer anti-pattern
 date: 2011-10-26 08:30
-categories:
-  - CSharp
 tags:
-  - Architecture
-  - Opinion
-  - WCF
+  - csharp
+  - architecture
+  - wcf
 ---
 
 When you talk with fellow developers and you mention **Service Layer** people automatically hear **WCF Services**. Did i miss a book or some guidance document from Microsoft, stating that WCF stands for service layer?

@@ -2,11 +2,10 @@
 layout: post
 title: Take control of your configuration
 date: 2012-04-12 15:13
-categories:
-  - CSharp
 tags:
-  - Test Driven Development
-  - Configuration
+  - csharp
+  - test driven development
+  - configuration
 ---
 
 Using configuration values can sometimes be hard to get a SUT thoroughly tested. Especially when you have behavior tied to those configuration values.

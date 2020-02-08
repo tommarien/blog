@@ -2,10 +2,8 @@
 layout: post
 title: Javascript by convention
 date: 2014-03-17 11:29
-categories:
-  - javascript
 tags:
-  - opinion
+  - javascript
   - code quality
 ---
 
