@@ -7,10 +7,9 @@ tags:
 date: 2020-02-10 15:05:28
 ---
 
+In **React Testing Library**, the recommended way, after the other queries don't work for your use-case, is to add a [`data-testid`](https://testing-library.com/docs/dom-testing-library/api-queries#bytestid) attribute on the element.
 
-A common approach in **React Testing Library** is to add a [`data-testid`](https://testing-library.com/docs/dom-testing-library/api-queries#bytestid) attribute on the element.
-
-This works brilliantly for all baked-in React HTML components, for instance:
+This works for all baked-in React HTML components, for instance on a `<div/>`:
 
 ```jsx
 import React from "react";
@@ -35,11 +34,9 @@ test("it renders as expected", () => {
 });
 ```
 
-## The problem
+## How to do this with custom components?
 
-I don't like hard-coding any context specific data in my components, usually the consuming component should provide that data.
-
-Due to the `-` in the name it's not so easy to do so and you will see people creating other aliases for it:
+Due to the `-` in the name it's not so easy and you will see other property names for it or just hard-coding the the _testId_ into the component:
 
 ```jsx
 import React from "react";
