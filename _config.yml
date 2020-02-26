@@ -95,6 +95,9 @@ theme_config:
     #sitemap: /sitemap.xml || sitemap
     #commonweal: /404/ || heartbeat
 
+  footer:
+    since: 2011
+
   pjax: true
 
   social:
@@ -149,6 +152,13 @@ theme_config:
     codes:
       external: true
       family: Fira Code
+
+  symbols_count_time:
+    separated_meta: false
+    item_text_post: true
+    item_text_total: false
+    awl: 4
+    wpm: 275
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
