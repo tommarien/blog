@@ -118,7 +118,7 @@ theme_config:
   disqus:
     enable: true
     shortname: tommariengithubio
-    count: true
+    count: false
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
