@@ -154,7 +154,7 @@ theme_config:
       family: Fira Code
 
   symbols_count_time:
-    separated_meta: false
+    separated_meta: true
     item_text_post: true
     item_text_total: false
     awl: 4
