@@ -2,15 +2,15 @@
 
 ```bash
 # install deps
-yarn
+npm i
 
 # create new post
-yarn hexo new <title>
+npm run hexo new <title>
 
 # deploy
-yarn deploy
+npm run deploy
 
 # serve locally
-yarn serve
+npm run serve
 
 ```
