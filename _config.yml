@@ -100,6 +100,9 @@ theme_config:
 
   pjax: true
 
+  vendors:
+    pjax: //cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js
+
   social:
     GitHub: http://github.com/tommarien || github
     Twitter: http://twitter.com/Tom_Marien || twitter
@@ -159,7 +162,6 @@ theme_config:
     item_text_total: false
     awl: 4
     wpm: 275
-
 # # Deployment
 # ## Docs: https://hexo.io/docs/deployment.html
 # deploy:
