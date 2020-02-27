@@ -8,12 +8,10 @@
   "scripts": {
     "serve": "hexo server",
     "serve:drafts": "hexo serve --drafts",
-    "hexo": "hexo",
-    "deploy": "hexo clean;hexo deploy"
+    "hexo": "hexo"
   },
   "dependencies": {
     "hexo": "^4.2.0",
-    "hexo-deployer-git": "^2.1.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-index": "^1.0.0",
