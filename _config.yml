@@ -119,7 +119,7 @@ theme_config:
     only_pageview: false
 
   disqus:
-    enable: false
+    enable: true
     shortname: tommariengithubio
     count: false
 
