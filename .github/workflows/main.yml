@@ -13,7 +13,7 @@ jobs:
 
       - name: Restore last modified time
         run: |
-          git ls-files -z source/_posts/*.md | while read -d '' path; do touch -d $(git log -1 --format=\"@%ct\" $path) "$path"; done
+          git ls-files -z source/_posts/*.md | while read -d '' path; do touch -d $(git log -1 --format=@%ct $path) "$path"; done
 
       - name: Cache node modules
         uses: actions/cache@v1
