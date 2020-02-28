@@ -11,6 +11,10 @@ jobs:
         with:
           node-version: "12.x"
 
+      - name: Restore last modified time
+        run: |
+          git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" \"$path\")\" \"$path\"; done
+
       - name: Cache node modules
         uses: actions/cache@v1
         with:
@@ -19,12 +23,11 @@ jobs:
 
       - name: Setup Hexo Dependencies
         run: |
-          npm install hexo-cli -g
           npm install
 
       - name: Setup Deploy Private Key
         env:
-          HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.DeployKey }}
+          HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY  }}
         run: |
           mkdir -p ~/.ssh/
           echo "$HEXO_DEPLOY_PRIVATE_KEY" > ~/.ssh/id_rsa
@@ -38,6 +41,6 @@ jobs:
 
       - name: Deploy Hexo
         run: |
-          hexo clean
-          hexo generate
-          hexo deploy
+          npm run hexo clean
+          npm run hexo generate
+          npm run hexo deploy
