@@ -11,6 +11,10 @@ jobs:
         uses: actions/setup-node@master
         with:
           node-version: "12.x"
+      
+      - name: Restore last modified time
+        uses: srt32/git-actions@v0.0.3
+        args: git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" \"$path\")\" \"$path\"; done
 
       - name: Build and Deploy
         uses: renzhaosy/hexo-deploy-action@master
