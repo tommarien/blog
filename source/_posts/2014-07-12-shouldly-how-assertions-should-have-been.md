@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Shouldly: how assertions should have been all along"
-date: 2014-07-12 20:47:00 +0200
+date: 2014-07-12 20:47:00
+updated: 2019-03-21 21:27:09
 tags:
   - csharp
   - test driven development

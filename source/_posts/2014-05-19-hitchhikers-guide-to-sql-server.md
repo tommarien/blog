@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Hitchhiker's guide to Sql Server"
-date: 2014-05-19 12:40:30 +0200
+date: 2014-05-19 12:40:30
+updated: 2020-01-21 23:58:22
 tags: 
   - sql server
   - performance

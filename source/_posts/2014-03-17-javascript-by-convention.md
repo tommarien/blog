@@ -2,6 +2,7 @@
 layout: post
 title: Javascript by convention
 date: 2014-03-17 11:29
+updated: 2019-03-21 21:27:09
 tags:
   - javascript
   - code quality
