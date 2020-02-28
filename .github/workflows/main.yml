@@ -4,13 +4,18 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@master
 
-    - name: Build and Deploy
-      uses: renzhaosy/hexo-deploy-action@master
-      env:
-        PERSONAL_TOKEN: ${{ secrets.DeployToken }}
-        PUBLISH_REPOSITORY: tommarien/tommarien.github.io # The repository the action should deploy to.
-        BRANCH: master  # The branch the action should deploy to.
-        PUBLISH_DIR: ./public # The folder the action should deploy.
+      - name: Setup node
+        uses: actions/setup-node@master
+        with:
+          node-version: "12.x"
+
+      - name: Build and Deploy
+        uses: renzhaosy/hexo-deploy-action@master
+        env:
+          PERSONAL_TOKEN: ${{ secrets.DeployToken }}
+          PUBLISH_REPOSITORY: tommarien/tommarien.github.io # The repository the action should deploy to.
+          BRANCH: master # The branch the action should deploy to.
+          PUBLISH_DIR: ./public # The folder the action should deploy.
