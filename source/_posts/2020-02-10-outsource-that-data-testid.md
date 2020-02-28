@@ -5,6 +5,7 @@ tags:
   - react
   - react testing library
 date: 2020-02-10 15:05:28
+updated: 2020-02-10 20:45:00
 ---
 
 In **React Testing Library**, the recommended way, after the other queries don't work for your use-case, is to add a [`data-testid`](https://testing-library.com/docs/dom-testing-library/api-queries#bytestid) attribute on the element.
