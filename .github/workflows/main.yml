@@ -41,7 +41,6 @@ jobs:
 
       - name: Deploy Hexo
         run: |
-          ssh -vT git@github.com
           npm run hexo clean
           npm run hexo generate
           npm run hexo deploy
