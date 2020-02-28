@@ -162,9 +162,10 @@ theme_config:
     item_text_total: false
     awl: 4
     wpm: 275
-# # Deployment
-# ## Docs: https://hexo.io/docs/deployment.html
-# deploy:
-#   type: git
-#   repo: git@github.com:tommarien/tommarien.github.io.git
-#   branch: master
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:tommarien/tommarien.github.io.git
+  branch: master

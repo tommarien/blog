@@ -4,23 +4,16 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
+      - uses: actions/checkout@v1
 
-      - name: Setup node
-        uses: actions/setup-node@master
+      - name: Cache node modules
+        uses: actions/cache@v1
         with:
-          node-version: "12.x"
-      
-      - name: Restore last modified time
-        uses: srt32/git-actions@v0.0.3
-        with:
-          args: git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" \"$path\")\" \"$path\"; done
+          path: node_modules
+          key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
 
-      - name: Build and Deploy
-        uses: renzhaosy/hexo-deploy-action@master
-        env:
-          PERSONAL_TOKEN: ${{ secrets.DeployToken }}
-          PUBLISH_REPOSITORY: tommarien/tommarien.github.io # The repository the action should deploy to.
-          BRANCH: master # The branch the action should deploy to.
-          PUBLISH_DIR: ./public # The folder the action should deploy.
+      - uses: yrpang/github-actions-hexo@master
+        with:
+          deploykey: ${{secrets.DeployToken}}
+          username: tommarien
+          email: tommarien@gmail.com
