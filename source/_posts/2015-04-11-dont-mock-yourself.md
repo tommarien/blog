@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Don't mock yourself
-date: 2015-04-11T20:28:50+01:00
+date: 2015-04-11 20:28:50
+updated: 2020-02-05 11:26:53
 tags:
   - test driven development
   - anti pattern

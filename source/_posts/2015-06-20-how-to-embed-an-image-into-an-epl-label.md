@@ -1,7 +1,8 @@
 ---
 layout: post
 title: How to embed an image into an EPL label
-date: 2015-06-20T14:01:26+01:00
+date: 2015-06-20 14:01:26
+updated: 2020-02-08 20:51:51
 tags:
   - csharp
   - epl
