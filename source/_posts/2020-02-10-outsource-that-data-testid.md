@@ -13,7 +13,7 @@ In **React Testing Library**, the recommended way, after the other queries don't
 This works for all baked-in React HTML components, for instance on a `<div/>`:
 
 ```jsx
-import React from "react";
+import React from 'react';
 
 export default function Component() {
   return <div data-testid="some-test-id" />;
@@ -23,15 +23,15 @@ export default function Component() {
 **Spec**
 
 ```jsx
-import React from "react";
-import "@testing-library/jest-dom/extend-expect";
-import { render } from "@testing-library/react";
-import Component from "./Component";
+import React from 'react';
+import '@testing-library/jest-dom/extend-expect';
+import { render } from '@testing-library/react';
+import Component from './Component';
 
-test("it renders as expected", () => {
+test('it renders as expected', () => {
   const { getByTestId } = render(<Component />);
 
-  expect(getByTestId("some-test-id")).toBeInTheDocument();
+  expect(getByTestId('some-test-id')).toBeInTheDocument();
 });
 ```
 
@@ -40,8 +40,8 @@ test("it renders as expected", () => {
 Due to the `-` in the name it's not so easy and you will see other property names for it or just hard-coding the the _testId_ into the component:
 
 ```jsx
-import React from "react";
-import { string } from "prop-types";
+import React from 'react';
+import { string } from 'prop-types';
 
 export default function Component({ testId }) {
   return <div data-testid={testId} />;
@@ -59,8 +59,8 @@ Component.defaultProps = {
 **Spec**
 
 ```jsx
-test("it renders as expected", () => {
-  const testId = "some-test-id";
+test('it renders as expected', () => {
+  const testId = 'some-test-id';
 
   const { getByTestId } = render(<Component testId={testId} />);
 
@@ -73,27 +73,27 @@ test("it renders as expected", () => {
 As i don't like having two different conventions for specifying the `data-testid` attribute, i would suggest the following:
 
 ```jsx
-import React from "react";
-import { string } from "prop-types";
+import React from 'react';
+import { string } from 'prop-types';
 
-export default function Component({ "data-testid": dataTestId }) {
+export default function Component({ 'data-testid': dataTestId }) {
   return <div data-testid={dataTestId} />;
 }
 
 Component.propTypes = {
-  "data-testid": string
+  'data-testid': string
 };
 
 Component.defaultProps = {
-  "data-testid": undefined
+  'data-testid': undefined
 };
 ```
 
 **Spec**
 
 ```jsx
-test("it renders as expected", () => {
-  const testId = "some-test-id";
+test('it renders as expected', () => {
+  const testId = 'some-test-id';
 
   const { getByTestId } = render(<Component data-testid={testId} />);
 
