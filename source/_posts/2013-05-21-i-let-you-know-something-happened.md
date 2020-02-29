@@ -2,6 +2,7 @@
 layout: post
 title: I let you know that something happened
 date: 2013-05-21 21:20
+updated: 2013-05-21 21:20
 tags:
   - csharp
   - command query separation

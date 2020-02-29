@@ -2,6 +2,7 @@
 layout: post
 title: I command you
 date: 2013-05-11 21:03
+updated: 2013-05-11 21:03
 tags:
   - csharp
   - command query separation

@@ -2,7 +2,7 @@
 layout: post
 title: Who is reading your tests?
 date: 2014-08-04 13:14:13
-updated: 2019-03-21 21:27:09
+updated: 2014-08-04 13:14:13
 tags:
   - csharp
   - test driven development

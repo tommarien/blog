@@ -2,6 +2,7 @@
 layout: post
 title: Take control of your configuration
 date: 2012-04-12 15:13
+updated: 2012-04-12 15:13
 tags:
   - csharp
   - test driven development

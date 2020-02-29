@@ -2,7 +2,7 @@
 layout: post
 title: Using git as subversion client
 date: 2014-08-27 07:23:40
-updated: 2019-03-21 21:27:09
+updated: 2014-08-27 07:23:40
 tags:
   - git
   - subversion

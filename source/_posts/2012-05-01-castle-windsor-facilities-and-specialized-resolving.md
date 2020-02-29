@@ -2,6 +2,7 @@
 layout: post
 title: "Castle Windsor: Facilities and specialized resolving"
 date: 2012-05-01 21:29
+updated: 2012-05-01 21:29
 tags:
   - csharp
   - inversion of control

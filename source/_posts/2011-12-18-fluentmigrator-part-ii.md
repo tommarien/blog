@@ -2,6 +2,7 @@
 layout: post
 title: FluentMigrator Part II
 date: 2011-12-18 17:12
+updated: 2011-12-18 17:12
 tags:
   - csharp
   - fluent migrator

@@ -2,6 +2,7 @@
 layout: post
 title: DateTime.Now, the test-driven paradox
 date: 2011-11-05 22:56
+updated: 2011-11-05 22:56
 tags:
   - csharp
   - test driven design

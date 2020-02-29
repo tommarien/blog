@@ -2,6 +2,7 @@
 layout: post
 title: Currying your monolithic code with basic DDD principles
 date: 2013-05-05 16:17
+updated: 2013-05-05 16:17
 tags:
   - csharp
   - code quality

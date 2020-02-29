@@ -2,6 +2,7 @@
 layout: post
 title: Micro-classes as building blocks
 date: 2011-10-30 22:32
+updated: 2011-10-30 22:32
 tags:
   - csharp
   - code quality

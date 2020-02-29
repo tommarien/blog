@@ -2,6 +2,7 @@
 layout: post
 title: FluentMigrator, database migrations done right
 date: 2011-12-09 19:53
+updated: 2011-12-09 19:53
 tags:
   - csharp
   - fluent migrator

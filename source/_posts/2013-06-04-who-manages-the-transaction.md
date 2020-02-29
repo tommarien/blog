@@ -2,6 +2,7 @@
 layout: post
 title: Who manages the transaction?
 date: 2013-06-04 20:00
+updated: 2013-06-04 20:00
 tags:
   - csharp
   - nhibernate

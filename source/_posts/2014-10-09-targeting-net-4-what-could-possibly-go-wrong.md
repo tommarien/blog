@@ -2,7 +2,7 @@
 layout: post
 title: Targeting .NET 4.0, what could possibly go wrong?
 date: 2014-10-09 19:45:21
-updated: 2020-02-05 11:26:53
+updated: 2014-10-09 19:45:21
 tags:
   - continuous integration
   - pitfalls
