@@ -35,6 +35,10 @@ jobs:
           git config --global user.name "tommarien"
           git config --global user.email "tommarien@gmail.com"
 
+      - name: Clone Repo
+        run: |
+         git clone git@github.com:tommarien/tommarien.github.io.git .deploy_git
+
       - name: Deploy Hexo
         run: |
           npm run hexo clean
