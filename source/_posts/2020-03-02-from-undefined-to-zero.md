@@ -7,9 +7,9 @@ updated: 2020-03-02 14:53:15
 ---
 
 
-As **Javascript** continues to be one of the most misunderstood languages on the planet, of which you could find evidence all over the web. One of my personal favorites is the the [lightning Wat talk by Gary Bernhardt](https://www.destroyallsoftware.com/talks/wat).
+As **Javascript** continues to be one of the most misunderstood languages on the planet, of which you could find evidence all over the web. One of my personal favorites is the [lightning Wat talk by Gary Bernhardt](https://www.destroyallsoftware.com/talks/wat).
 
-Lately i've begun to realize the underlying beauty of the language and i felt the need to blog about it.
+Lately i've begun to realize the underlying beauty of the language and felt the need to blog about it.
 
 We'll start with two [primitives](https://developer.mozilla.org/en-US/docs/Glossary/Primitive), `undefined` and `null`. Why do they exist both and what differentiates them?
 
@@ -45,7 +45,7 @@ console.log(notDotted.match(/\w+\.\w+/)); // => null
 console.log(undefined === null); // => false
 ```
 
-So strictly speaking they are different, which we could have expected. But they do have **the same meaning** so:
+So strictly speaking they are different, which we could have expected. But they do have **the same meaning**:
 
 ```js
 console.log(undefined == null); // => true
