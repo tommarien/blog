@@ -1,7 +1,7 @@
 ---
-title: "About me"
+title: 'About me'
 date: 2011-10-21 18:25
-modified: 2015-05-06
+updated: 2015-05-06 18:25
 ---
 
 My interest in typing letters on a keyboard that can be interpreted by a compiler started very young. It all began when i got my first PC from my parents, back in the days they called it a Home Computer, a Texas Instruments with some sort of prehistoric OS on it.
