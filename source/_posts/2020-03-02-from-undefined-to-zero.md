@@ -67,4 +67,4 @@ if (!user) user.rename('John', 'Doe');
 
 ## Conclusion
 
-Concepts like [falsy](https://developer.mozilla.org/nl/docs/Glossary/Falsy), [type coercion](https://developer.mozilla.org/nl/docs/Glossary/Type_coercion) start to make a whole lot of sense, if you try to understand the problems they try to fix.
+Concepts like [falsy](https://developer.mozilla.org/nl/docs/Glossary/Falsy), [type coercion](https://developer.mozilla.org/nl/docs/Glossary/Type_coercion) start to make a whole lot of sense, if you try to understand the problems they fix.
