@@ -6,7 +6,6 @@ date: 2020-03-02 14:53:15
 updated: 2020-03-02 14:53:15
 ---
 
-
 As **Javascript** continues to be one of the most misunderstood languages on the planet, of which you could find evidence all over the web. One of my personal favorites is the [lightning Wat talk by Gary Bernhardt](https://www.destroyallsoftware.com/talks/wat).
 
 Lately i've begun to realize the underlying beauty of the language and felt the need to blog about it.
@@ -58,13 +57,16 @@ Luckily they both evaluate to false, otherwise we would have to write the follow
 ```js
 let user;
 
-// 👎 If they didn't evaluate to false
+// 💩 If they didn't evaluate to false and without ==
 if (user !== null && user !== undefined) user.rename('John', 'Doe');
 
-// 👍 Thank god
+// 💪 With == (type coercion)
+if (user != null) user.rename('John', 'Doe');
+
+// 🙏 Thanks to evaluate to false (falsy)
 if (user) user.rename('John', 'Doe');
 ```
 
 ## Conclusion
 
-Concepts like [falsy](https://developer.mozilla.org/nl/docs/Glossary/Falsy), [type coercion](https://developer.mozilla.org/nl/docs/Glossary/Type_coercion) start to make a whole lot of sense, if you try to understand the problems they fix.
+Concepts like [type coercion](https://developer.mozilla.org/nl/docs/Glossary/Type_coercion) and [falsy](https://developer.mozilla.org/nl/docs/Glossary/Falsy) start to make a whole lot of sense if you look at the problems they fix.
