@@ -2,7 +2,10 @@
 title: From undefined to zero
 tags:
   - javascript
+date: 2020-03-02 14:53:15
+updated: 2020-03-02 14:53:15
 ---
+
 
 As **Javascript** continues to be one of the most misunderstood languages on the planet, of which you could find evidence all over the web. One of my personal favorites is the the [lightning Wat talk by Gary Bernhardt](https://www.destroyallsoftware.com/talks/wat).
 
