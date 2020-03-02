@@ -62,7 +62,7 @@ let user;
 if (user !== null && user !== undefined) user.rename('John', 'Doe');
 
 // 👍 Thank god
-if (!user) user.rename('John', 'Doe');
+if (user) user.rename('John', 'Doe');
 ```
 
 ## Conclusion
