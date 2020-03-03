@@ -3,7 +3,7 @@ title: From undefined to zero
 tags:
   - javascript
 date: 2020-03-02 14:53:15
-updated: 2020-03-02 14:53:15
+updated: 2020-03-03 10:47:42
 ---
 
 As **Javascript** continues to be one of the most misunderstood languages on the planet, of which you could find evidence all over the web. One of my personal favorites is the [lightning Wat talk by Gary Bernhardt](https://www.destroyallsoftware.com/talks/wat).
@@ -63,7 +63,7 @@ if (user !== null && user !== undefined) user.rename('John', 'Doe');
 // 💪 With == (type coercion)
 if (user != null) user.rename('John', 'Doe');
 
-// 🙏 Thanks to evaluate to false (falsy)
+// 🙏 Thanks to falsy
 if (user) user.rename('John', 'Doe');
 ```
 
