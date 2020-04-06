@@ -5,7 +5,7 @@ tags:
   - typescript
 ---
 
-Usually when i want to practice componentization, i'll take a [Bootstrap](https://getbootstrap.com/) component and just start. The nice thing about these exercises is that if you create the same component more than once, you gradually start seeing the progress you've made. This time we'll practice on an [Alert](https://getbootstrap.com/docs/4.4/components/alerts/) component.
+Usually when i want to practice componentization, i look for a candidate in [Bootstrap](https://getbootstrap.com/). The nice thing about these exercises is that if you create the same component more than once, you gradually start seeing the progress you've made. This time we'll practice on the [Alert](https://getbootstrap.com/docs/4.4/components/alerts/) component.
 
 ## Basic
 
@@ -61,7 +61,7 @@ export default Alert;
 </div>
 ```
 
-Let's think about this for a while, normally i would advise to create a utility component `<AlertHeading />` for the heading but as there is no added behavior we will use a `string` property:
+Let's think about this for a while, normally i would advise to create a utility component `<AlertHeading />` for the heading, but as there is no added behavior a `string` property looks like a match.
 
 ```tsx
 import React, { ReactNode } from 'react';
@@ -94,22 +94,21 @@ function Alert({ children, variant, heading }: AlertProps): JSX.Element {
 export default Alert;
 ```
 
-And if you do need to have more fine-grained control of the html of the heading, you can always transform the `heading` prop into a [slot](https://daveceddia.com/pluggable-slots-in-react-components/), by changing the type from `string` to `ReactNode`:
+And if you do need to have more fine-grained control of the html of the heading, you can always transform the `heading` prop into a [slot](https://daveceddia.com/pluggable-slots-in-react-components/), by changing the type from `string` to `ReactNode`.
 
-```ts
-export type AlertProps = {
-  children: ReactNode;
-  heading?: ReactNode;
-  variant:
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'danger'
-    | 'warning'
-    | 'info'
-    | 'light'
-    | 'dark';
-};
+### Usage
+
+```tsx
+import React from 'react';
+import Alert from './components/Alerts/Alert';
+
+function App(): JSX.Element {
+  return (
+    <Alert heading="Well done!" variant="success">
+      <p>You made it!</p>
+    </Alert>
+  );
+}
 ```
 
-If you are interested in my setup or in the tests using `@testing-library/react` you can take a look at the [React Playground Repo](https://github.com/tommarien/react-playground/tree/master/src/components/Alerts).
+If you are interested in my setup or in the tests using `@testing-library/react` you can take a look at my [React Playground Repo](https://github.com/tommarien/react-playground/tree/master/src/components/Alerts).
