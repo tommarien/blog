@@ -145,7 +145,7 @@ function App(): JSX.Element {
 - the alert needs to be enriched with the `alert-dismissible` class
 - when the user clicks on the dismiss button the alert should no longer be visible
 
-> I choose not the use the Bootstrap JS Library and let the alert itself control the dismissed state, if you ever need to do something more than just hiding the alert, you can always add an optional `onAfterDismiss` function property.
+> I choose not to use the Bootstrap JS Library and let the alert itself control the dismissed state, if you ever need to do something more than just hiding the alert, you can always add an optional `onAfterDismiss` function property.
 
 ### Result
 
