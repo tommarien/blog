@@ -29,6 +29,8 @@ function greet(name) {
 greet(); // => undefined
 ```
 
+<!-- more -->
+
 ## `null`
 
 Represents the **intentional** absence of a value, it's a semantical difference.

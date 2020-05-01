@@ -7,7 +7,6 @@ date: 2020-04-06 22:57:41
 updated: 2020-04-06 22:57:41
 ---
 
-
 When i want to practice componentization, i usually look for a candidate in a library like [Bootstrap](https://getbootstrap.com/). The nice thing about these exercises is that if you create the same component more than once, you can gradually see the progress you've made. This time we'll practice on the [Alert](https://getbootstrap.com/docs/4.4/components/alerts/) component.
 
 ## Basic
@@ -19,6 +18,8 @@ So according to the documentation an alert, in it's most basic form, looks like 
   A simple primary alert—check it out!
 </div>
 ```
+
+<!-- more -->
 
 - a `div` with _alert_ role
 - root class: alert

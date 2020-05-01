@@ -37,6 +37,8 @@ test('it renders as expected', () => {
 
 ## How to do this with custom components?
 
+<!-- more -->
+
 Due to the `-` in the name it's not so easy and you will see other property names for it or just hard-coding the the _testId_ into the component:
 
 ```jsx
@@ -48,11 +50,11 @@ export default function Component({ testId }) {
 }
 
 Component.propTypes = {
-  testId: string
+  testId: string,
 };
 
 Component.defaultProps = {
-  testId: undefined
+  testId: undefined,
 };
 ```
 
@@ -81,11 +83,11 @@ export default function Component({ 'data-testid': dataTestId }) {
 }
 
 Component.propTypes = {
-  'data-testid': string
+  'data-testid': string,
 };
 
 Component.defaultProps = {
-  'data-testid': undefined
+  'data-testid': undefined,
 };
 ```
 
