@@ -25,8 +25,6 @@ The graphic data is lost when the image has finished printing, power is removed 
 - **p4** Length of graphic in dots (or print lines)
 - **DATA** Raw binary data without graphic file formatting. Data must be in bytes. Multiply the width in bytes (p3) by the number of print lines (p4) for the total amount of graphic data. The printer automatically calculates the exact size of the data block based upon this formula.
 
-<!-- more -->
-
 ## The challenge
 
 The challenge here was to figure out what they exactly mean by _Raw binary data without graphic file formatting_!

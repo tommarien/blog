@@ -26,8 +26,6 @@ Unless you are developing a framework, the answer in most cases should be no.
 
 ## What do we need to make mocking possible?
 
-<!-- more -->
-
 Most of the mocking frameworks need a way to intercept calls, either by marking the method (or property) as virtual or by introducing an interface.
 
 As virtual method's (or properties) tend to be a bit on the annoying side, we just **introduce interfaces everywhere**. Named equally to it's implementation class, prefixed with 'I' as good convention abiding citizens do.

@@ -19,8 +19,6 @@ So according to the documentation an alert, in it's most basic form, looks like 
 </div>
 ```
 
-<!-- more -->
-
 - a `div` with _alert_ role
 - root class: alert
 - contextual classes: primary, secondary, success, danger, warning, info, light and dark (alert-{contextual} class)

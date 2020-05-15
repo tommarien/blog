@@ -37,8 +37,6 @@ So i thought of creating a simple relaxed ini parsing library called [ZenIni](ht
 Install-Package zenini
 ```
 
-<!-- more -->
-
 ### Provider
 
 Everything starts with constructing the provider, which you could register as a static instance in your DI container of choice:

@@ -37,8 +37,6 @@ test('it renders as expected', () => {
 
 ## How to do this with custom components?
 
-<!-- more -->
-
 Due to the `-` in the name it's not so easy and you will see other property names for it or just hard-coding the the _testId_ into the component:
 
 ```jsx
