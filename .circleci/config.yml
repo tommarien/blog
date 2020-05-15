@@ -41,7 +41,7 @@ jobs:
           at: public
       - add_ssh_keys:
           fingerprints:
-            - '1d:0c:ea:28:8a:4f:f0:5d:98:e1:ca:93:0f:38:d6:ab'
+            - '7e:7e:3f:c7:ca:20:ab:95:4d:cb:bd:5a:ae:a0:78:4a'
       - run:
           name: Setup git info
           command: |
