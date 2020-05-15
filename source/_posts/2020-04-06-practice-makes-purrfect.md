@@ -220,4 +220,4 @@ function App(): JSX.Element {
 }
 ```
 
-> If you are interested in my setup or in the tests using [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) you can take a look at my [React Playground Repository](https://github.com/tommarien/react-playground/tree/master/src/components/Alerts).
+> If you are interested in my setup or in the tests using [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) you can take a look at my [React Playground Repository](https://github.com/tommarien/react-playground/blob/master/src/components/Alert.tsx).
