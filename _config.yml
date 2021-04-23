@@ -149,8 +149,8 @@ theme_config:
 
     # Font settings for headlines (<h1> to <h6>).
     headings:
-      external: true
-      family: Montserrat
+      external: false
+      family:
       size: 2
 
     # Font settings for posts (.post-body).
