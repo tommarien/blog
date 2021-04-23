@@ -138,7 +138,7 @@ theme_config:
 
     global:
       external: true
-      family: Merriweather
+      family: Inter
       size:
 
     # Font settings for site title (.site-title).
