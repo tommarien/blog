@@ -160,8 +160,8 @@ theme_config:
 
     # Font settings for <code> and code blocks.
     codes:
-      external: true
-      family: Fira Code
+      external: false
+      family: MonoLisa
 
   symbols_count_time:
     separated_meta: true

@@ -47,3 +47,19 @@ for $inject_mixin in hexo-config('injects.mixin')
 // --------------------------------------------------
 for $inject_style in hexo-config('injects.style')
   @import $inject_style;
+
+@font-face {
+    src: url('../fonts/MonoLisa-Regular.woff2') format('woff2')
+    font-family: "MonoLisa";
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    src: url('../fonts/MonoLisa-RegularItalic.woff2') format('woff2')
+    font-family: "MonoLisa";
+    font-weight: 400;
+    font-style: italic;
+    font-display: block;
+}
