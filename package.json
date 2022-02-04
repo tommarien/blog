@@ -10,7 +10,7 @@
     "dev": "npm-run-all clean build:* -p dev:*",
     "dev:11ty": "eleventy --serve --quiet",
     "dev:rollup": "rollup -c -w",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages --message \"[skip ci] Updates\" -d dist"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
