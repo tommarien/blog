@@ -2,6 +2,7 @@
 layout: post
 title: From undefined to zero
 permalink: blog/2020/03/02/from-undefined-to-zero/index.html
+excerpt: ❤️ JavaScript
 tags:
   - post
   - javascript

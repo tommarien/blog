@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kiss my default props
-excerpt: So what if you want to type defaultProps in TS?
+excerpt: Typing defaultProps with TypeScript
 permalink: blog/2020/07/24/kiss-my-default-props/index.html
 tags:
   - post
