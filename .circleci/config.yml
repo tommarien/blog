@@ -49,12 +49,16 @@ jobs:
             git config --global user.email "tommarien@gmail.com"
       - run:
           name: Deploy docs to gh-pages branch
-          command: npx gh-pages -d dist
+          command: npm run deploy
 workflows:
   version: 2
   complete:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              only:
+                - master
       - deploy:
           requires:
             - build
