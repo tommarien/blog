@@ -2,7 +2,7 @@ version: 2.1
 executors:
   node_lts: # declares a reusable executor
     docker:
-      - image: node:14.18.0
+      - image: node:16.13.2
     working_directory: ~/repo
 jobs:
   build:
@@ -25,10 +25,9 @@ jobs:
           name: Generate blog
           command: npm run build
       - persist_to_workspace:
-          root: public
+          root: .
           paths:
-            - '*'
-
+            - .
   deploy:
     executor: node_lts
     steps:
@@ -38,7 +37,7 @@ jobs:
           keys:
             - npm-v16-{{ checksum "package.json" }}
       - attach_workspace:
-          at: public
+          at: .
       - add_ssh_keys:
           fingerprints:
             - '7e:7e:3f:c7:ca:20:ab:95:4d:cb:bd:5a:ae:a0:78:4a'
