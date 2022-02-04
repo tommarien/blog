@@ -50,6 +50,7 @@ jobs:
       - run:
           name: Deploy docs to gh-pages branch
           command: npx gh-pages -d dist
+workflows:
   version: 2
   complete:
     jobs:
