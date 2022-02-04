@@ -73,7 +73,11 @@ export type BadgeProps = {
 
 const BS_ROOT = 'badge';
 
-function Badge({ children, variant, pill = false }: BadgeProps): JSX.Element {
+function Badge({
+  children,
+  variant,
+  pill = false,
+}: BadgeProps): JSX.Element {
   return (
     <span
       className={classNames(BS_ROOT, `${BS_ROOT}-${variant}`, {

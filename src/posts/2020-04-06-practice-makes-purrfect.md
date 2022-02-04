@@ -65,7 +65,11 @@ import React from 'react';
 import Alert from './components/Alerts/Alert';
 
 function App(): JSX.Element {
-  return <Alert variant="primary">A simple primary alert—check it out!</Alert>;
+  return (
+    <Alert variant="primary">
+      A simple primary alert—check it out!
+    </Alert>
+  );
 }
 ```
 
@@ -101,7 +105,11 @@ export type AlertProps = {
 
 const BS_ROOT = 'alert';
 
-function Alert({ children, variant, heading }: AlertProps): JSX.Element {
+function Alert({
+  children,
+  variant,
+  heading,
+}: AlertProps): JSX.Element {
   return (
     <div role="alert" className={`${BS_ROOT} ${BS_ROOT}-${variant}`}>
       {heading && <h4 className={`${BS_ROOT}-heading`}>{heading}</h4>}
@@ -133,10 +141,18 @@ function App(): JSX.Element {
 ## Dismissing
 
 ```html
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Holy guacamole!</strong> You should check in on some of those fields
-  below.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<div
+  class="alert alert-warning alert-dismissible fade show"
+  role="alert"
+>
+  <strong>Holy guacamole!</strong> You should check in on some of those
+  fields below.
+  <button
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+  >
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
@@ -215,8 +231,8 @@ import Alert from './components/Alerts/Alert';
 function App(): JSX.Element {
   return (
     <Alert variant="warning" dismissible>
-      <strong>Holy guacamole!</strong> You should check in on some of those
-      fields below.
+      <strong>Holy guacamole!</strong> You should check in on some of
+      those fields below.
     </Alert>
   );
 }
