@@ -12,18 +12,18 @@ jobs:
 
       - restore_cache:
           keys:
-            - yarn-v14-{{ checksum "yarn.lock" }}
+            - npm-v16-{{ checksum "package.json" }}
+            - npm-v16-
 
-      - run: yarn install
+      - run: npm install
 
       - save_cache:
-          key: yarn-v14-{{ checksum "yarn.lock" }}
+          key: npm-v16-{{ checksum "package.json" }}
           paths:
-            - ~/.cache/yarn
             - node_modules
       - run:
           name: Generate blog
-          command: yarn hexo generate
+          command: npm run build
       - persist_to_workspace:
           root: public
           paths:
@@ -36,7 +36,7 @@ jobs:
 
       - restore_cache:
           keys:
-            - yarn-v14-{{ checksum "yarn.lock" }}
+            - npm-v16-{{ checksum "package.json" }}
       - attach_workspace:
           at: public
       - add_ssh_keys:
@@ -48,12 +48,8 @@ jobs:
             git config --global user.name "tommarien"
             git config --global user.email "tommarien@gmail.com"
       - run:
-          name: Clone repo
-          command: git clone git@github.com:tommarien/tommarien.github.io.git .deploy_git
-      - run:
-          name: Deploy
-          command: yarn hexo deploy
-workflows:
+          name: Deploy docs to gh-pages branch
+          command: npx gh-pages -d dist
   version: 2
   complete:
     jobs:

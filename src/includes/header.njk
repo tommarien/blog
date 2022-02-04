@@ -1,0 +1,20 @@
+<header>
+  <nav class="container mx-auto max-w-3xl px-8 pt-2 flex flex-wrap justify-between">
+    <div>
+      <h1 class="flex justify-between">
+        <img src="{{ site.baseUrl }}ghost-192x192.png" width="48"/>
+        <a href="{{ site.baseUrl }}" class="pl-5">{{ site.name }}</a>
+      </h1>
+      <p class="italic">{{site.description}}</p>
+    </div>
+
+    <ul class="flex flex-wrap sm:w-32 w-full mt-6 md:justify-between justify-evenly">
+      <li>
+        <a href="{{ site.baseUrl }}feed/feed.xml">Rss</a>
+      </li>
+      <li>
+        <a href="{{ site.baseUrl }}about">About</a>
+      </li>
+    </ul>
+  </nav>
+</header>

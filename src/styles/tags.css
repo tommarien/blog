@@ -1,0 +1,41 @@
+a.tag {
+  @apply inline-block px-2 py-1 mr-2 mb-2 text-xs font-bold rounded lowercase text-white;
+  border: 1px solid transparent;
+}
+
+a.tag:before {
+  content: '#';
+}
+
+a.tag {
+  @apply bg-gray-500;
+}
+
+.tag.csharp {
+  @apply bg-green-500;
+}
+
+.tag.code.quality {
+  @apply bg-indigo-500;
+}
+
+.tag.javascript {
+  @apply text-gray-800 bg-yellow-500;
+}
+
+.tag.typescript {
+  @apply bg-blue-500;
+}
+
+.tag.database {
+  @apply bg-red-500;
+}
+
+.tag.castle-windsor {
+  @apply bg-purple-500;
+}
+
+.tag.react {
+  @apply text-gray-800;
+  background-color: #61dafb;
+}
