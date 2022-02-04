@@ -1,6 +1,6 @@
 {
-  "name": "11r",
-  "author": "Reese Schultz",
+  "name": "tommarien.github.io",
+  "author": "Tom Marien",
   "license": "MIT",
   "scripts": {
     "build": "cross-env NODE_ENV=production npm-run-all clean -p build:*",
