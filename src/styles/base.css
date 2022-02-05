@@ -1,6 +1,6 @@
 /* Font (see https://fonts.google.com) */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500;1,700&display=swap');
 
 /* Prism Code Highlighting Theme (see https://prismjs.com) */
 @import url('https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-night-owl.css');
@@ -13,10 +13,10 @@
 html,
 body {
   @apply antialiased text-gray-300 bg-gray-800;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lora', serif;
 }
 .site-description {
-  @apply text-gray-400
+  @apply text-gray-400;
 }
 
 h1,
@@ -185,8 +185,9 @@ code {
   /* background: #011627 !important; */
   /* line-height: 1.4 !important; */
   font-size: 0.88rem;
-  font-family: MonoLisa, Monaco, 'DejaVu Sans Mono', 'Lucida Console', monospace;
-  font-feature-settings: "liga" 1;
+  font-family: MonoLisa, Monaco, 'DejaVu Sans Mono', 'Lucida Console',
+    monospace;
+  font-feature-settings: 'liga' 1;
   font-display: swap;
   @apply mt-4 mb-4;
 }
