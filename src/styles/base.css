@@ -1,6 +1,6 @@
 /* Font (see https://fonts.google.com) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,700;1,500;1,700&display=swap');
 
 /* Prism Code Highlighting Theme (see https://prismjs.com) */
 @import url('https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-night-owl.css');
@@ -13,7 +13,7 @@
 html,
 body {
   @apply antialiased text-gray-300 bg-gray-800;
-  font-family: 'Lora', serif;
+  font-family: 'Open Sans', sans-serif;
 }
 .site-description {
   @apply text-gray-400;
@@ -25,7 +25,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Lobster Two', cursive;
+  font-style: italic;
   @apply font-bold leading-tight mt-5 mb-2;
 }
 
