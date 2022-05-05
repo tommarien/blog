@@ -16,7 +16,7 @@ Lately i've begun to realize the underlying beauty of the language and felt the 
 
 We'll start with two [primitives](https://developer.mozilla.org/en-US/docs/Glossary/Primitive), `undefined` and `null`. Why do they exist both and what differentiates them?
 
-## `undefined`
+### undefined
 
 The value that gets assigned to unassigned declared variables or to `function` parameters that are missing.
 
@@ -33,7 +33,7 @@ function greet(name) {
 greet(); // => undefined
 ```
 
-## `null`
+### null
 
 Represents the **intentional** absence of a value, it's a semantical difference.
 
@@ -42,7 +42,7 @@ const notDotted = 'googlebe';
 console.log(notDotted.match(/\w+\.\w+/)); // => null
 ```
 
-## Are they equal?
+### Are they equal?
 
 ```js
 console.log(undefined === null); // => false
@@ -54,7 +54,7 @@ So strictly speaking they are different, which we could have expected. But they 
 console.log(undefined == null); // => true
 ```
 
-## Falsy
+### Falsy
 
 Luckily they both evaluate to false, otherwise we would have to write the following code:
 
@@ -71,6 +71,6 @@ if (user != null) user.rename('John', 'Doe');
 if (user) user.rename('John', 'Doe');
 ```
 
-## Conclusion
+### Conclusion
 
 Concepts like [type coercion](https://developer.mozilla.org/nl/docs/Glossary/Type_coercion) and [falsy](https://developer.mozilla.org/nl/docs/Glossary/Falsy) start to make a whole lot of sense if you look at the problems they fix.

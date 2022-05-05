@@ -56,7 +56,7 @@ export type BadgeProps = {
 };
 ```
 
-#### An alternative approach
+### An alternative approach
 
 What if we would just use object default values?
 

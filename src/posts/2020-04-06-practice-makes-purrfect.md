@@ -13,7 +13,7 @@ templateEngineOverride: md
 
 When i want to practice componentization, i usually look for a candidate in a library like [Bootstrap](https://getbootstrap.com/). The nice thing about these exercises is that if you create the same component more than once, you can gradually see the progress you've made. This time we'll practice on the [Alert](https://getbootstrap.com/docs/4.4/components/alerts/) component.
 
-## Basic
+### Basic
 
 So according to the documentation an alert, in it's most basic form, looks like this:
 
@@ -27,7 +27,7 @@ So according to the documentation an alert, in it's most basic form, looks like 
 - root class: alert
 - contextual classes: primary, secondary, success, danger, warning, info, light and dark (alert-{contextual} class)
 
-### Result
+#### Result
 
 ```tsx
 import React, { ReactNode } from 'react';
@@ -58,7 +58,7 @@ function Alert({ children, variant }: AlertProps): JSX.Element {
 export default Alert;
 ```
 
-### Usage
+#### Usage
 
 ```tsx
 import React from 'react';
@@ -73,7 +73,7 @@ function App(): JSX.Element {
 }
 ```
 
-## Heading
+### Heading
 
 ```html
 <div class="alert alert-success" role="alert">
@@ -84,7 +84,7 @@ function App(): JSX.Element {
 
 As there is no extra behavior tied to the heading, a `string` property looks like a perfect match otherwise an utility component `<AlertHeader />` would have been in order.
 
-### Result
+#### Result
 
 ```tsx
 import React, { ReactNode } from 'react';
@@ -123,7 +123,7 @@ export default Alert;
 
 And if you do need to have more fine-grained control of the html of the heading, you could transform the `heading` property into a [slot](https://daveceddia.com/pluggable-slots-in-react-components/), by changing the type from `string` to `ReactNode`.
 
-### Usage
+#### Usage
 
 ```tsx
 import React from 'react';
@@ -138,7 +138,7 @@ function App(): JSX.Element {
 }
 ```
 
-## Dismissing
+### Dismissing
 
 ```html
 <div
@@ -164,7 +164,7 @@ function App(): JSX.Element {
 
 > I choose not to use the Bootstrap JS Library and let the alert itself control the dismissed state, if you ever need to do something more than just hiding the alert, you can always add an optional `onAfterDismiss` function property.
 
-### Result
+#### Result
 
 ```tsx
 import React, { ReactNode, useState } from 'react';
@@ -222,7 +222,7 @@ function Alert({
 export default Alert;
 ```
 
-### Usage
+#### Usage
 
 ```tsx
 import React from 'react';
