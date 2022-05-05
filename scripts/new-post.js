@@ -14,7 +14,7 @@ const slug = slugify(title.toLowerCase());
 const date = dateFns.format(new Date(), 'yyyy-MM-dd');
 const file = `./src/posts/${date}-${slug}.md`;
 
-fs.writeFile()
+fs.writeFile(
   file,
   `---
 layout: post
