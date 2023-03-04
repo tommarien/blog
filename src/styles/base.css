@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,700;1,500;1,700&display=swap');
 
 /* Prism Code Highlighting Theme (see https://prismjs.com) */
-@import url('https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-dracula.min.css');
+@import url('https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-nord.min.css');
 
 :not(pre) > code[class*='language-'] {
   /* Fixes issue where theme removes indentation. */
