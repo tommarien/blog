@@ -1,6 +1,6 @@
 /* Font (see https://fonts.google.com) */
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,700;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,500;0,700;1,500;1,700&display=swap');
 
 /* Prism Code Highlighting Theme (see https://prismjs.com) */
 @import url('rose-pine.css');
@@ -12,11 +12,13 @@
 
 html,
 body {
-  @apply antialiased text-gray-300 bg-gray-700;
+  @apply antialiased;
+  color: rgb(224, 222, 244);
+  background: rgb(57, 53, 82);
   font-family: 'Open Sans', sans-serif;
 }
 .site-description {
-  @apply text-gray-400;
+  color: rgb(196, 167, 231);
 }
 
 h1,
@@ -25,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lobster Two', cursive;
+  font-family: 'Bitter', cursive;
   font-style: italic;
   @apply font-bold leading-tight mt-5 mb-2;
 }
@@ -43,7 +45,7 @@ h4 > a,
 h5 > a,
 h6 > a,
 a {
-  @apply text-white;
+  color: rgb(224, 222, 244);
 }
 
 h1 {
@@ -76,7 +78,7 @@ p {
 
 pre {
   @apply my-2 text-sm tracking-wider break-words;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 hr {
@@ -104,10 +106,10 @@ hr {
 }
 
 .content > blockquote {
-  border-left: 4px solid #718096;
+  border-left: 4px solid #c4a7e7;
   margin: 1.5em 0em;
   padding: 0.5em 1em;
-  @apply bg-gray-700;
+  background-color: rgb(57, 53, 82);
 }
 
 .content > img {
@@ -166,6 +168,10 @@ hr {
   @apply text-sm;
 }
 
+footer {
+  background-color: rgb(35, 33, 54);
+}
+
 @font-face {
   font-family: 'MonoLisa';
   src: url('/fonts/MonoLisa-Regular.woff2') format('woff2');
@@ -188,7 +194,7 @@ code {
   font-size: 0.88rem;
   font-family: MonoLisa, Monaco, 'DejaVu Sans Mono', 'Lucida Console',
     monospace;
-  font-feature-settings: 'liga', 'ss02';
+  font-feature-settings: 'ss02';
   font-display: swap;
   @apply mt-4 mb-4;
 }
