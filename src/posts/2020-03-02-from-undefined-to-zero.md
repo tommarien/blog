@@ -20,7 +20,7 @@ We'll start with two [primitives](https://developer.mozilla.org/en-US/docs/Gloss
 
 The value that gets assigned to unassigned declared variables or to `function` parameters that are missing.
 
-```js
+```javascript
 // 1. Unassigned variable
 let variable;
 console.log(variable); // => undefined
@@ -37,7 +37,7 @@ greet(); // => undefined
 
 Represents the **intentional** absence of a value, it's a semantical difference.
 
-```js
+```javascript
 const notDotted = 'googlebe';
 console.log(notDotted.match(/\w+\.\w+/)); // => null
 ```
@@ -50,7 +50,7 @@ console.log(undefined === null); // => false
 
 So strictly speaking they are different, which we could have expected. But they do have **the same meaning**:
 
-```js
+```javascript
 console.log(undefined == null); // => true
 ```
 
@@ -58,7 +58,7 @@ console.log(undefined == null); // => true
 
 Luckily they both evaluate to false, otherwise we would have to write the following code:
 
-```js
+```javascript
 let user;
 
 // 💩 If they didn't evaluate to false and without ==

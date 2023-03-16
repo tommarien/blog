@@ -14,7 +14,7 @@ In **React Testing Library**, the recommended way, after the other queries don't
 
 This works for all baked-in React HTML components, for instance on a `<div/>`:
 
-```jsx
+```javascript
 import React from 'react';
 
 export default function Component() {
@@ -24,7 +24,7 @@ export default function Component() {
 
 **Spec**
 
-```jsx
+```javascript
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
@@ -41,7 +41,7 @@ test('it renders as expected', () => {
 
 Due to the `-` in the name it's not so easy and you will see other property names for it or just hard-coding the the _testId_ into the component:
 
-```jsx
+```javascript
 import React from 'react';
 import { string } from 'prop-types';
 
@@ -60,7 +60,7 @@ Component.defaultProps = {
 
 **Spec**
 
-```jsx
+```javascript
 test('it renders as expected', () => {
   const testId = 'some-test-id';
 
@@ -74,7 +74,7 @@ test('it renders as expected', () => {
 
 As i don't like having two different conventions for specifying the `data-testid` attribute, i would suggest the following:
 
-```jsx
+```javascript
 import React from 'react';
 import { string } from 'prop-types';
 
@@ -93,7 +93,7 @@ Component.defaultProps = {
 
 **Spec**
 
-```jsx
+```javascript
 test('it renders as expected', () => {
   const testId = 'some-test-id';
 
