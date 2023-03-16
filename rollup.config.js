@@ -1,12 +1,12 @@
-import postcss from 'rollup-plugin-postcss';
-import replace from '@rollup/plugin-replace';
-import svg from 'rollup-plugin-svg';
-import { terser } from 'rollup-plugin-terser';
-import path from 'path';
+const postcss = require('rollup-plugin-postcss');
+const replace = require('@rollup/plugin-replace');
+const svg = require('rollup-plugin-svg');
+const { terser } = require('rollup-plugin-terser');
+const path = require('path');
 
 const dev = process.env.NODE_ENV !== 'production';
 
-export default {
+module.exports = {
   input: 'src/scripts/main.js',
   output: {
     sourcemap: false,
