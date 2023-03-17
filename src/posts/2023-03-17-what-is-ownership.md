@@ -99,7 +99,7 @@ fn main() {
 
     { // another scope starts
 
-        // scoped_book exits
+        // scoped_book exists
         let scoped_book = String::from("Cast away");
 
         // can access both here
@@ -107,7 +107,7 @@ fn main() {
 
     } // scoped_book goes out of scope (aka drop)
 
-    // here only book exits, scoped_book has been dropped!
+    // here only book exists, scoped_book has been dropped!
     println!("{}", book);
 } // book gets dropped
 ```
