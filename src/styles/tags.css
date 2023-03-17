@@ -39,3 +39,7 @@ a.tag {
   @apply text-gray-800;
   background-color: #61dafb;
 }
+
+.tag.rust {
+  background-color: rgb(11, 114, 97);
+}
