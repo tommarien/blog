@@ -9,14 +9,14 @@ tags:
   - rust
 ---
 
-Rust does not manage it's memory using [Garbage collection](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>) or trough explicit (de-)allocation but uses a concept **ownership** based on explicit rules.
+Rust does not manage it's memory using [Garbage collection](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>) or trough explicit (de-)allocation but uses a concept called **"ownership"** based on explicit rules.
 
 In this post we will focus on values with an unknown size at compile time in other words values that are stored on the ["Heap"](https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/).
 
 ### 1. Each value has an owner
 
 ```rust
-// The variable owner, owns the String "Book"
+// The variable 'owner' owns the String "Book"
 let owner = String::from("Book");
 ```
 
