@@ -4,6 +4,7 @@ title: What is ownership?
 excerpt: A key concept in Rust's memory management
 permalink: blog/2023/03/17/what-is-ownership/index.html
 date: 2023-03-17
+updatedDate: 2023-03-18
 tags:
   - post
   - rust
