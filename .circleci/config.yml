@@ -15,7 +15,7 @@ jobs:
             - yarn-v16-{{ checksum "yarn.lock" }}
             - yarn-v16-
 
-      - run: npm install
+      - run: yarn install --frozen-lockfile
 
       - save_cache:
           key: yarn-v16-{{ checksum "yarn.lock" }}
