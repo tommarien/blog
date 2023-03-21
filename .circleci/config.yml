@@ -12,18 +12,18 @@ jobs:
 
       - restore_cache:
           keys:
-            - npm-v16-{{ checksum "package.json" }}
-            - npm-v16-
+            - yarn-v16-{{ checksum "yarn.lock" }}
+            - yarn-v16-
 
       - run: npm install
 
       - save_cache:
-          key: npm-v16-{{ checksum "package.json" }}
+          key: yarn-v16-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
       - run:
           name: Generate blog
-          command: npm run build
+          command: yarn build
       - persist_to_workspace:
           root: .
           paths:
@@ -35,7 +35,7 @@ jobs:
 
       - restore_cache:
           keys:
-            - npm-v16-{{ checksum "package.json" }}
+            - yarn-v16-{{ checksum "yarn.lock" }}
       - attach_workspace:
           at: .
       - add_ssh_keys:
@@ -48,7 +48,7 @@ jobs:
             git config --global user.email "tommarien@gmail.com"
       - run:
           name: Deploy docs to gh-pages branch
-          command: npm run deploy
+          command: yarn deploy
 workflows:
   version: 2
   complete:
