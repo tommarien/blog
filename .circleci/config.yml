@@ -2,7 +2,7 @@ version: 2.1
 executors:
   node_lts: # declares a reusable executor
     docker:
-      - image: node:16.14.0
+      - image: node:18.15.0
     working_directory: ~/repo
 jobs:
   build:
@@ -12,13 +12,13 @@ jobs:
 
       - restore_cache:
           keys:
-            - yarn-v16-{{ checksum "yarn.lock" }}
-            - yarn-v16-
+            - yarn-v18-{{ checksum "yarn.lock" }}
+            - yarn-v18-
 
       - run: yarn install --frozen-lockfile
 
       - save_cache:
-          key: yarn-v16-{{ checksum "yarn.lock" }}
+          key: yarn-v18-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
       - run:
@@ -35,7 +35,7 @@ jobs:
 
       - restore_cache:
           keys:
-            - yarn-v16-{{ checksum "yarn.lock" }}
+            - yarn-v18-{{ checksum "yarn.lock" }}
       - attach_workspace:
           at: .
       - add_ssh_keys:
