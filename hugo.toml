@@ -1,0 +1,63 @@
+baseURL = 'https://tommarien.github.io'
+languageCode = 'en-us'
+title = 'Tom Marien'
+theme = 'hugo-theme-stack'
+
+# Theme i18n support
+# Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
+DefaultContentLanguage = 'en'
+
+[permalinks]
+post = "/blog/:year/:month/:day/:slug/"
+page = "/:slug/"
+
+[services.googleAnalytics]
+id = "G-CTE1G7BVQ0"
+
+[[menu.social]]
+name = "X"
+identifier = "x"
+url = "https://x.com/Tom_Marien"
+[menu.social.params]
+icon = "brand-twitter"
+
+[[menu.social]]
+name = "Github"
+identifier = "github"
+url = "https://github.com/tommarien"
+[menu.social.params]
+icon = "brand-github"
+
+[params.comments]
+enabled = true
+provider = "giscus"
+[params.comments.giscus]
+repo = "tommarien/tommarien.github.io"
+repoID = "MDEwOlJlcG9zaXRvcnkxNzU1MDYzNTU="
+category = "General"
+categoryID = "DIC_kwDOCnYDs84CVEUV"
+theme = "dark-dimmed"
+
+[params.sidebar]
+subtitle = "Life of a pragmatic developer"
+[params.sidebar.avatar]
+src = "img/avatar.jpg"
+alt = "Tom Marien"
+
+[[params.widgets.homepage]]
+type = "search"
+
+[[params.widgets.homepage]]
+type = "archives"
+limit = 5
+
+[[params.widgets.homepage]]
+type = "tag-cloud"
+
+[params.colorScheme]
+toggle = false
+default = "dark"
+
+[markup.highlight]
+style = "gruvbox"
+
