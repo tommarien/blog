@@ -6,7 +6,7 @@ theme = 'hugo-theme-stack'
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
 DefaultContentLanguage = 'en'
-
+ignoreLogs = ['warning-goldmark-raw-html']
 [permalinks]
 post = "/blog/:year/:month/:day/:slug/"
 page = "/:slug/"
