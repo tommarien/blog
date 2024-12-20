@@ -29,7 +29,7 @@ url = "https://github.com/tommarien"
 icon = "brand-github"
 
 [params.comments]
-enabled = true
+enabled = false
 provider = "giscus"
 [params.comments.giscus]
 repo = "tommarien/tommarien.github.io"
